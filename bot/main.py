@@ -14,7 +14,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(__file__))
@@ -353,7 +353,12 @@ def run_watch():
         cur = {"price": d.get("price"), "status": d.get("status"),
                "desc_hash": hashlib.sha1((d.get("description") or "").encode()).hexdigest()[:10],
                "title": d.get("title") or (wstate.get(ad_id) or {}).get("title", ""),
-               "mileage": val.find_mileage(d.get("description") or "") or (wstate.get(ad_id) or {}).get("mileage")}
+               "mileage": val.find_mileage(d.get("description") or "") or (wstate.get(ad_id) or {}).get("mileage"),
+               "online_seit": d.get("online_seit") or (wstate.get(ad_id) or {}).get("online_seit", ""),
+               "ablauf": d.get("ablauf") or (wstate.get(ad_id) or {}).get("ablauf", ""),
+               "kategorie": d.get("kategorie") or (wstate.get(ad_id) or {}).get("kategorie", ""),
+               "url": d.get("url") or (wstate.get(ad_id) or {}).get("url", ""),
+               "expiry_pushed": (wstate.get(ad_id) or {}).get("expiry_pushed", "")}
         old = wstate.get(ad_id)
         changes = []
         if old is None:
@@ -374,17 +379,43 @@ def run_watch():
         if changes and d.get("status") != "geloescht":
             note = "; ".join(f"{w}: {a} → {b}" for w, a, b in changes)
             bike_report({**d, "id": ad_id}, note=f"Letzte Änderung {now()}: {note}")
+        # push once when the ad runs out tomorrow (Vienna date)
+        end = parse_dt(cur["ablauf"])
+        tomorrow = (datetime.now(VIE) + timedelta(days=1)).date()
+        if end and cur["status"] not in ("geloescht", "verkauft") and end.astimezone(VIE).date() == tomorrow \
+                and cur["expiry_pushed"] != cur["ablauf"]:
+            push("⏳ Anzeige läuft morgen ab", f"{cur['title'][:60]}\n{eur(cur['price'])} · endet {end.astimezone(VIE):%d.%m. %H:%M}\n{cur['url']}",
+                 url=cur["url"], prio="default", tags="hourglass")
+            cur["expiry_pushed"] = cur["ablauf"]
         wstate[ad_id] = cur
     save(os.path.join(ROOT, ".watch_state.json"), wstate)
     write_overview(wstate)
 
 
+def parse_dt(v):
+    try:
+        return datetime.strptime(v, "%Y-%m-%dT%H:%M:%S%z")
+    except (TypeError, ValueError):
+        return None
+
+
+def fmt_date(v):
+    dt = parse_dt(v)
+    if not dt or dt.year > datetime.now().year + 2:
+        return "–"
+    return dt.astimezone(VIE).strftime("%d.%m.%Y")
+
+
 def write_overview(wstate):
     lines = ["# Watchlist – aktueller Stand", "", f"Stand: {now()}", "",
-             "| ID | Titel | Preis | Laufleistung | Status |", "|---|---|---|---|---|"]
+             "| ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |",
+             "|---|---|---|---|---|---|---|---|"]
+    ids = watchlist_ids()
     for k, v in wstate.items():
-        if k in watchlist_ids():
-            lines.append(f"| [{k}](fahrraeder/{k}.md) | {v.get('title', '')[:50]} | {eur(v.get('price'))} | {str(v.get('mileage')) + ' km' if v.get('mileage') else '?'} | {v.get('status')} |")
+        if k in ids:
+            lines.append(f"| [{k}](fahrraeder/{k}.md) | {v.get('title', '')[:50]} | {eur(v.get('price'))} | "
+                         f"{str(v.get('mileage')) + ' km' if v.get('mileage') else '?'} | {v.get('status')} | "
+                         f"{fmt_date(v.get('online_seit'))} | {fmt_date(v.get('ablauf'))} | {v.get('kategorie') or ''} |")
     with open(os.path.join(ROOT, "WATCHLIST.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 

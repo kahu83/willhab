@@ -148,6 +148,9 @@ def detail(ad_id_or_url):
         "location": at.get("LOCATION/ADDRESS_2", "") or addr.get("postCity", ""),
         "url": seo,
         "changed": ad.get("changedDate", ""),
+        "online_seit": ad.get("firstPublishedDate") or ad.get("publishedDate") or "",
+        "ablauf": ad.get("endDate") or "",
+        "kategorie": " › ".join(b.get("displayName", "") for b in (ad.get("breadcrumbs") or [])[-2:]),
         "images": [i.get("mainImageUrl") or i.get("referenceImageUrl")
                    for i in ((ad.get("advertImageList") or {}).get("advertImage") or [])
                    if i.get("mainImageUrl") or i.get("referenceImageUrl")],
