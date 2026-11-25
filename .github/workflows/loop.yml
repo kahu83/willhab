@@ -1,0 +1,53 @@
+name: Roboter-Dauerschleife
+
+# Fallback, falls GitHubs Zeitplan nicht startet: Ein Lauf sucht ~5,5 Std. lang alle 10 Min
+# und startet sich danach selbst neu. Läuft NUR im öffentlichen Repo (dort sind Minuten gratis).
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: loop
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  loop:
+    if: ${{ github.event.repository.private == false }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "anthropic>=2.14,<3" pillow
+      - name: Alle 10 Min suchen, Watchlist um 6/12/18 Uhr Wien
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || 'wh-ebike-zzee721a6z' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          git config user.name "willhaben-roboter"
+          git config user.email "actions@users.noreply.github.com"
+          end=$(( $(date +%s) + 330*60 ))
+          last_watch=""
+          while [ "$(date +%s)" -lt "$end" ]; do
+            python bot/main.py search || echo "Suche fehlgeschlagen"
+            h=$(TZ=Europe/Vienna date +%H); d=$(TZ=Europe/Vienna date +%F)
+            if { [ "$h" = "06" ] || [ "$h" = "12" ] || [ "$h" = "18" ]; } && [ "$last_watch" != "$d-$h" ]; then
+              python bot/main.py watch || echo "Watchlist fehlgeschlagen"; last_watch="$d-$h"
+            fi
+            git add data
+            if ! git diff --cached --quiet; then
+              git commit -qm "Daten $(date -u +%F_%H:%M)"
+              for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
+            fi
+            sleep 540
+          done
+      - name: Nächste Runde starten
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run loop.yml --ref main

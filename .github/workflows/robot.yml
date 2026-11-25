@@ -1,0 +1,51 @@
+name: Willhaben Roboter
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"       # Suche: alle 10 Minuten (öffentliches Repo)
+    - cron: "0 5,11,17 * * *"   # Watchlist: 6, 12, 18 Uhr (Winterzeit Wien)
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "search, watch, ping oder visiontest"
+        default: search
+
+concurrency:
+  group: robot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pakete
+        run: pip install --quiet "anthropic>=2.14,<3" pillow
+      - name: Welcher Job?
+        id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "job=${{ inputs.job }}" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "0 5,11,17 * * *" ]; then echo "job=watch" >> $GITHUB_OUTPUT
+          else echo "job=search" >> $GITHUB_OUTPUT; fi
+      - name: Roboter laufen lassen
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || 'wh-ebike-zzee721a6z' }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ "${{ steps.pick.outputs.job }}" = "photos" ]; then python bot/photos.py; else python bot/main.py ${{ steps.pick.outputs.job }}; fi
+      - name: Ergebnisse speichern
+        run: |
+          git config user.name "willhaben-roboter"
+          git config user.email "actions@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -m "Daten ${{ steps.pick.outputs.job }} $(date -u +%F_%H:%M)"
+          for i in 1 2 3; do git pull --rebase -X theirs && git push && break; sleep 5; done
+

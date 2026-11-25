@@ -1,0 +1,2 @@
+# Watchlist: eine willhaben-Anzeige pro Zeile (Link oder ID). Alles nach # ist Kommentar.
+# Wird 3x täglich auf Preis, Beschreibung und Status geprüft -> watchlist_log.csv
