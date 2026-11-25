@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-25 19:19
+Stand: 2026-11-25 19:37
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -52,3 +52,50 @@ Stand: 2026-11-25 19:19
 | [1531352589](fahrraeder/1531352589.md) | Magura MT5 4-Kolben Scheibenbremsen Set - MTB / E- | 69 € | ? | verfuegbar | 24.10.2026 | 08.12.2026 | Fahrrad Ersatzteile / Zubehör › Bremsen |
 | [1707675383](fahrraeder/1707675383.md) | Marzocchi Z2 | 100 € | ? | verfuegbar | 06.11.2026 | 21.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [2144651048](fahrraeder/2144651048.md) | RockShox 35 RL Federgabel - 29 Zoll / 150 mm | 90 € | ? | verfuegbar | 24.10.2026 | 08.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1438058829](fahrraeder/1438058829.md) | Knieschoner Fox Launch Pro D30 + Handschuhe | 55 € | ? | verfuegbar | 14.10.2026 | 28.11.2026 | Fahrradbekleidung › Fahrrad Protektoren |
+| [1527084079](fahrraeder/1527084079.md) | Race Face Protektorenshirt Flank Core D30 in M | 35 € | ? | verfuegbar | 17.10.2026 | 01.12.2026 | Fahrradbekleidung › Fahrrad Protektoren |
+| [948228340](fahrraeder/948228340.md) |  | ? | ? | geloescht | – | – |  |
+| [1672617097](fahrraeder/1672617097.md) | (verkauft) Wärmepume für Brauchwasser | 150 € | ? | verkauft | 12.10.2026 | 26.11.2026 | Heizung / Öfen / Klima › Heizkörper / Radiatoren |
+| [1522610712](fahrraeder/1522610712.md) |  | ? | ? | geloescht | – | – |  |
+| [945485276](fahrraeder/945485276.md) | Hoval CombiVal WPER (300) - Brauchwasser-Wärmepump | 250 € | ? | verfuegbar | 26.10.2026 | 10.12.2026 | Heizung / Öfen / Klima › Boiler |
+| [1174080062](fahrraeder/1174080062.md) | Wärmepumpe für Schwimmbad | 50 € | ? | verfuegbar | 02.11.2026 | 17.12.2026 | Pools / Biotope › Heizungen |
+| [1022737853](fahrraeder/1022737853.md) |  | ? | ? | geloescht | – | – |  |
+| [1682701657](fahrraeder/1682701657.md) | Fox 36 Rhythm 160mm 29 Zoll | 99 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1553002343](fahrraeder/1553002343.md) | (verkauft) Cane Creek Helm Mk2 Air 29" Boost 160mm | 222 € | ? | verkauft | 25.10.2026 | 09.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1544143603](fahrraeder/1544143603.md) | Race Face Getta Grip Fahrrad Griffe | 10 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1272049794](fahrraeder/1272049794.md) | Griffe RACEFACE Getta Grip 33 schwarz/ kashmoney 1 | 18 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1971233514](fahrraeder/1971233514.md) | Fahrrad Lenkergriff | 10 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1232918401](fahrraeder/1232918401.md) | Diamant E-Bike mit Bosch-Akku - für Bastler / Repa | 269 € | ? | verfuegbar | 01.11.2026 | 16.12.2026 | Fahrräder › E-Bikes |
+| [1135300963](fahrraeder/1135300963.md) | Specialized Turbo Kenevo | 1.800 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Fahrräder › E-Bikes |
+| [1777775774](fahrraeder/1777775774.md) | E Bike Schutz | 30 € | ? | verfuegbar | 29.10.2026 | 13.12.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
+| [1185205700](fahrraeder/1185205700.md) | Kinder E-Bike Apache | 950 € | 1817 km | verfuegbar | 30.10.2026 | 14.12.2026 | Fahrräder › E-Bikes |
+| [1347028291](fahrraeder/1347028291.md) | 12 Fach Kassette NEU für XD Freilauf | 55 € | ? | verfuegbar | 30.10.2026 | 14.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
+| [1143798288](fahrraeder/1143798288.md) | Akku 750 Power Tube von Bosch | 240 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
+| [1884412009](fahrraeder/1884412009.md) | Specialized Woman's Turbo Levo Short Travel FSR CE | 1.100 € | ? | verfuegbar | 25.10.2026 | 09.12.2026 | Fahrräder › E-Bikes |
+| [993291035](fahrraeder/993291035.md) | KTM Macina Kapoho 7973 - 750 Wh | Jahresservice ne | 1.890 € | 5100 km | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrräder › E-Bikes |
+| [1594663858](fahrraeder/1594663858.md) | E Bike Batterie, Akku, Bosch Power Tube 625 | 210 € | ? | verfuegbar | 15.10.2026 | 29.11.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
+| [1512313825](fahrraeder/1512313825.md) | Continental Mtb Reifen Xynotal | 25 € | ? | verfuegbar | 12.10.2026 | 26.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [1993844725](fahrraeder/1993844725.md) | Neu Husqvarna BLi10 Akku, 2100 mAh, 36 V, wiederau | 60 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Rasen- / Wiesenmäher › Rasenmähroboter |
+| [1026015672](fahrraeder/1026015672.md) | Specialized Laufradsatz 29 Boost | 140 € | ? | verfuegbar | 12.10.2026 | 26.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [1595605679](fahrraeder/1595605679.md) | Schwimmender Delfin aus Aruba wasserfest Outdoor D | 40 € | ? | verfuegbar | 23.10.2026 | 07.12.2026 | Gartenmöbel / Griller / Dekoration › Gartendekoration |
+| [1735054921](fahrraeder/1735054921.md) | Electrolux Klimaanlage Wärmepumpe Innen-und Außeng | 380 € | ? | verfuegbar | 04.11.2026 | 19.12.2026 | Klimageräte / Ventilatoren › Klimageräte |
+| [1724294682](fahrraeder/1724294682.md) | Klimagerät | 90 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Klimageräte / Ventilatoren › Klimageräte |
+| [1509175543](fahrraeder/1509175543.md) |  | ? | ? | geloescht | – | – |  |
+| [1371378135](fahrraeder/1371378135.md) |  | ? | ? | geloescht | – | – |  |
+| [1726155840](fahrraeder/1726155840.md) | Rock Shox ZEB Mud Guard | 10 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1988075212](fahrraeder/1988075212.md) | Trek Rail 7 E-Bike Enduro / Freeride 29" L - Top Z | 2.000 € | ? | verfuegbar | 17.10.2026 | 01.12.2026 | Fahrräder › E-Bikes |
+| [793646708](fahrraeder/793646708.md) | SCOTT Axis eRIDE 20 - E-Bike | Baujahr 2020 | 625W | 950 € | 11476 km | verfuegbar | 16.10.2026 | 30.11.2026 | Fahrräder › E-Bikes |
+| [1481121810](fahrraeder/1481121810.md) | FORMULA CURA 4 Scheibenbremsen Paar | 179 € | ? | verfuegbar | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Bremsen |
+| [1302204579](fahrraeder/1302204579.md) | (verkauft) Mountainbike Fully Ktm | 1.950 € | 2000 km | verkauft | 06.10.2026 | 20.11.2026 | Fahrräder › Mountainbikes |
+| [1893915289](fahrraeder/1893915289.md) | (verkauft) KTM E-Bike Macina Sport | 950 € | ? | verkauft | 11.10.2026 | 25.11.2026 | Fahrräder › E-Bikes |
+| [1386434714](fahrraeder/1386434714.md) | KTM Kapoho 2973 | 2.000 € | ? | verfuegbar | 10.11.2026 | 25.12.2026 | Fahrräder › E-Bikes |
+| [1737466023](fahrraeder/1737466023.md) | (Verkauft) KTM Macina Kapoho 7973 - 750 Wh - eBike | 2.690 € | 642 km | verfuegbar | 12.09.2026 | – | Fahrräder › E-Bikes |
+| [1380923771](fahrraeder/1380923771.md) | Ktm Macina Ultimate II CXS | 850 € | 17482 km | verfuegbar | 24.10.2026 | 08.12.2026 | Fahrräder › E-Bikes |
+| [1035676202](fahrraeder/1035676202.md) | Fahrrad Halterung | 15 € | ? | verfuegbar | 25.10.2026 | 09.12.2026 | Fahrrad Ersatzteile / Zubehör › Aufbewahrung |
+| [1390679874](fahrraeder/1390679874.md) | E Bike | 1.900 € | 4242 km | verfuegbar | 07.11.2026 | 22.12.2026 | Fahrräder › E-Bikes |
+| [1281355307](fahrraeder/1281355307.md) | Fox 36 Rhythm 160mm | 160 € | ? | verfuegbar | 20.10.2026 | 04.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [792153108](fahrraeder/792153108.md) | Federgabel RockShox Lyrik Ultimate 29er, 180 mm En | 180 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1446084012](fahrraeder/1446084012.md) | FOX 36 AWL HD Sport 29" 160mm RAIL 2.0 Federgabel | 189 € | ? | verfuegbar | 12.11.2026 | 27.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [785575936](fahrraeder/785575936.md) | Kassette Shimano DEORE XT CS-M8000 11S (11:46T) | 40 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
+| [2049609737](fahrraeder/2049609737.md) | Dt Swiss Nabe 15x110 | 35 € | ? | verfuegbar | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [1015599562](fahrraeder/1015599562.md) | e*thirteen (by The Hive) MTB Hinterradnabe - Boost | 40 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
