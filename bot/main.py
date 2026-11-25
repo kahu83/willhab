@@ -348,8 +348,12 @@ def run_watch():
     ids = watchlist_ids()
     print(f"{now()}: prüfe {len(ids)} Watchlist-Anzeigen")
     for ad_id in ids:
-        d = wh.detail(ad_id)
-        time.sleep(1.5)
+        try:
+            d = wh.detail(ad_id)
+        except Exception as e:  # rate limit / network: skip this ad, next run retries
+            print(f"  {ad_id} übersprungen: {e}")
+            continue
+        time.sleep(2.5)
         cur = {"price": d.get("price"), "status": d.get("status"),
                "desc_hash": hashlib.sha1((d.get("description") or "").encode()).hexdigest()[:10],
                "title": d.get("title") or (wstate.get(ad_id) or {}).get("title", ""),
