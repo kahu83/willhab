@@ -15,6 +15,9 @@ THIS_YEAR = date.today().year
 
 # typical new price (EUR) of a complete bike by Bosch drive line
 DRIVE_NEW = [
+    (r"turbo\s*levo|\blevo\b", "Specialized Turbo Levo (Brose)", 5500),
+    (r"turbo\s*(vado|como|tero)|\bvado\b|\bcomo\b|\btero\b", "Specialized Turbo Vado/Como/Tero (Brose)", 3800),
+    (r"\bbrose\b|specialized\s*turbo", "Brose", 3500),
     (r"cargo\s*line", "Cargo Line", 5500),
     (r"performance\s*(line\s*)?sx|\bsx\b", "Performance Line SX", 4800),
     (r"\bcx\b|performance\s*(line\s*)?cx|\b(85|100|120)\s*nm", "Performance Line CX", 4300),
@@ -46,6 +49,14 @@ DEFECT_WORDS = ["defekt", "unfall", "sturz", "rahmenbruch", "rahmen gebrochen", 
 
 def is_bosch(text):
     return bool(re.search(r"\bbosch\b", text, re.I))
+
+
+BROSE_RE = re.compile(r"\bbrose\b|specialized\s*turbo|turbo\s*(levo|vado|como|tero)|specialized\s*(levo|vado|como|tero)", re.I)
+
+
+def is_brose(text):
+    """Brose motors, incl. Specialized Turbo bikes (Specialized 'Turbo' motors are built by Brose)."""
+    return bool(BROSE_RE.search(text))
 
 
 def find_year(text):
@@ -185,18 +196,18 @@ def rule_value(text, year, zustand="", new_price=None, mileage=None):
     }
 
 
-def comparable_median(ad_title, year):
+def comparable_median(ad_title, year, motor="bosch"):
     """Median asking price of working (gebraucht/neuwertig) Bosch bikes with similar title words."""
     words = [w for w in re.findall(r"[a-zA-ZäöüÄÖÜ0-9]{3,}", ad_title.lower())
              if w not in {"bike", "ebike", "e-bike", "fahrrad", "defekt", "unfall", "bosch", "verkaufe",
-                          "elektro", "elektrofahrrad", "mit", "und", "für", "zoll", "herren", "damen", "motor",
+                          "elektro", "elektrofahrrad", "mit", "und", "brose", "specialized", "für", "zoll", "herren", "damen", "motor",
                           "akku", "neu", "gebraucht", "top", "zustand", "sehr", "gut"}][:3]
     if not words:
         return None, 0
     prices = []
     for zpath in ("/a/zustand-gebraucht-23", "/a/zustand-neuwertig-2546"):
         try:
-            _, ads = wh.search(path=wh.EBIKE_CAT + zpath, rows=60, keyword=" ".join(words + ["bosch"]))
+            _, ads = wh.search(path=wh.EBIKE_CAT + zpath, rows=60, keyword=" ".join(words + [motor]))
         except Exception:
             continue
         for a in ads:
@@ -217,7 +228,7 @@ def comparable_median(ad_title, year):
 def estimate(title, text, zustand="", year=None, new_price=None, mileage=None):
     full = f"{title}\n{text}"
     r = rule_value(full, year, zustand, new_price, mileage)
-    med, n = comparable_median(title, year)
+    med, n = comparable_median(title, year, "specialized" if is_brose(full) and not is_bosch(full) else "bosch")
     if med:
         intact = round(0.5 * r["intact_value"] + 0.5 * med)
         r["comparables"] = n

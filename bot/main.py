@@ -31,7 +31,7 @@ VIE = ZoneInfo("Europe/Vienna")
 
 MAX_PRICE = 1200  # gilt für alle Suchen
 ONLY_PRIVATE = True
-MIN_YEAR = 2020
+MIN_YEAR = 2019
 DEAL = 0.30
 ALERT = 0.45
 DRY = os.environ.get("DRY_RUN") == "1"
@@ -88,8 +88,8 @@ DEFECT_RE = re.compile(r"defekt|unfall|sturzschaden|rahmenbruch|kaputt|beschädi
                        r"funktioniert nicht|ersatzteilspender", re.I)
 
 
-OTHER_MOTOR_RE = re.compile(r"shimano\s*steps|\bsteps\s*e\d|yamaha|bafang|brose|panasonic|ananda|mivice|"
-                            r"fazua|mahle|specialized\s*turbo|giant\s*syncdrive|heckmotor|hinterradmotor|"
+OTHER_MOTOR_RE = re.compile(r"shimano\s*steps|\bsteps\s*e\d|yamaha|bafang|panasonic|ananda|mivice|"
+                            r"fazua|mahle|giant\s*syncdrive|heckmotor|hinterradmotor|"
                             r"frontmotor|vorderradmotor|nabenmotor", re.I)
 VISION_PER_DAY = int(os.environ.get("VISION_PER_DAY", "20"))  # cost cap: ~1.5 Cent per bike -> max ~9 €/Monat
 
@@ -245,8 +245,26 @@ def run_search():
             continue
         full = f"{d['title']}\n{d['description']}"
 
+        text_ok = val.is_bosch(full) or val.is_brose(full)
+        other_motor = bool(OTHER_MOTOR_RE.search(full))
+        tyear, thint = val.find_year(full)
+        too_old = tyear is not None and tyear < MIN_YEAR and not thint
+        vis = None
+        if vision.enabled() and (text_ok or not other_motor) and not too_old and vision_budget(state):
+            vis = vision.analyze(d)
+        y = (vis or {}).get("modelljahr") or tyear or thint
+        try:
+            y = int(y) if y else None
+        except (TypeError, ValueError):
+            y = tyear or thint
+
         if a["id"] in defect_zustand or is_defect(d, d.get("zustand", "")):
             stats["defekt"] += 1
+            if y and y >= MIN_YEAR:
+                model_d = f"{vis.get('marke')} {vis.get('modell')}" if vis and vis.get("marke") else d["title"]
+                push(f"🔧 Defekt-Bike ab {MIN_YEAR}: Bj {y}",
+                     f"{model_d}\n{eur(d['price'])} · {d['km']} km entfernt · {d.get('location') or ''}\n"
+                     f"{(vis or {}).get('schaeden') or ''}\n{d['url']}".replace("\n\n", "\n"), url=d["url"], tags="wrench")
             append_csv("defekt_unfall.csv",
                        ["erfasst", "id", "titel", "preis", "entfernung_km", "laufleistung_km", "ort", "zustand", "link"],
                        [now(), d["id"], d["title"], d["price"], d["km"], val.find_mileage(full) or "",
@@ -254,28 +272,17 @@ def run_search():
 
         if not (d["price"] and d["price"] <= MAX_PRICE):
             continue
-        text_bosch = val.is_bosch(full)
-        other_motor = bool(OTHER_MOTOR_RE.search(full))
-        vis = None
-        if vision.enabled() and (text_bosch or not other_motor) and vision_budget(state):
-            vis = vision.analyze(d)
         sure = vis and vis.get("sicherheit") in ("hoch", "mittel")
         vm = (vis or {}).get("motor_hersteller") or "unbekannt"
-        if sure and vm not in ("Bosch", "unbekannt"):
-            continue  # photos/specs show a non-Bosch drive
-        if not (text_bosch or vm == "Bosch"):
+        if sure and vm not in ("Bosch", "Brose", "unbekannt"):
+            continue  # photos/specs show another drive
+        if not (text_ok or vm in ("Bosch", "Brose")):
             continue
-        year, hint = val.find_year(full)
-        y = (vis or {}).get("modelljahr") or year or hint
-        try:
-            y = int(y) if y else None
-        except (TypeError, ValueError):
-            y = year or hint
         if y is None or y < MIN_YEAR:
             continue
         extra = ""
         if vis:
-            extra = (f"\n{vis.get('marke') or ''} {vis.get('modell') or ''} Bosch {vis.get('bosch_linie') or ''} "
+            extra = (f"\n{vis.get('marke') or ''} {vis.get('modell') or ''} {vm} {vis.get('bosch_linie') or ''} "
                      f"{(str(vis.get('akku_wh')) + ' Wh') if vis.get('akku_wh') else ''}\n{vis.get('schaeden') or ''}")
         try:
             odo = int((vis or {}).get("laufleistung_km") or 0) or None
@@ -289,7 +296,7 @@ def run_search():
         disc = 1 - d["price"] / est["value"]
         est["discount"] = disc
         model_txt = f"{vis.get('marke')} {vis.get('modell')}" if vis else ""
-        print(f"  Bosch {y}: {d['title'][:50]} {eur(d['price'])} vs {eur(est['value'])} -> {disc:.0%} {model_txt}")
+        print(f"  {vm if vm != 'unbekannt' else 'Bosch/Brose'} {y}: {d['title'][:50]} {eur(d['price'])} vs {eur(est['value'])} -> {disc:.0%} {model_txt}")
         note = ""
         if vis:
             note = (f"Foto-/Spezifikationsprüfung: {model_txt} ({vis.get('modelljahr') or '?'}), "
@@ -397,7 +404,7 @@ def run_batch():
         if not ads:
             break
         time.sleep(1)
-    print(f"{len(cands)} Kandidaten (privat, <= {MAX_PRICE} €, <= 80 km)")
+    print(f"{len(cands)} Kandidaten (privat, <= {MAX_PRICE} €, <= {wh.RADIUS_KM} km)")
     details = []
     for a in cands:
         if len(details) >= n:

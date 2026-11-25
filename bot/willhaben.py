@@ -14,7 +14,7 @@ EBIKE_CAT = "/iad/kaufen-und-verkaufen/marktplatz/fahrraeder/e-bikes-4556"
 
 # PLZ 4493 Wolfern (Oberoesterreich)
 HOME = (48.0890, 14.3700)
-RADIUS_KM = 80
+RADIUS_KM = 170
 
 _NEXT = re.compile(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S)
 
