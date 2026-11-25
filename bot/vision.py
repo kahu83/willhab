@@ -23,7 +23,7 @@ Aufgabe:
 
 Antworte am Ende NUR mit einem JSON-Block:
 ```json
-{"marke": "...", "modell": "...", "modelljahr": 2021 oder null, "motor_hersteller": "Bosch|Shimano|Yamaha|Brose|Bafang|Panasonic|andere|unbekannt",
+{"marke": "...", "modell": "exakte Modellbezeichnung inkl. Variante/Ausstattung, z.B. Reaction Hybrid Pro 625", "modelljahr": 2021 oder null, "motor_hersteller": "Bosch|Shimano|Yamaha|Brose|Bafang|Panasonic|andere|unbekannt",
  "bosch_linie": "Active Line|Active Line Plus|Performance Line|Performance Line CX|Performance Line SX|Cargo Line|null",
  "akku_wh": 500 oder null, "laufleistung_km": 5982 oder null, "uvp_eur": 3999 oder null, "schaeden": "kurz oder leer",
  "sicherheit": "hoch|mittel|niedrig", "quelle": "Foto|Spezifikation|Verkäufertext", "notiz": "1 Satz"}

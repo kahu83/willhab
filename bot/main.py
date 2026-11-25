@@ -91,7 +91,7 @@ DEFECT_RE = re.compile(r"defekt|unfall|sturzschaden|rahmenbruch|kaputt|beschädi
 OTHER_MOTOR_RE = re.compile(r"shimano\s*steps|\bsteps\s*e\d|yamaha|bafang|panasonic|ananda|mivice|"
                             r"fazua|mahle|giant\s*syncdrive|heckmotor|hinterradmotor|"
                             r"frontmotor|vorderradmotor|nabenmotor", re.I)
-VISION_PER_DAY = int(os.environ.get("VISION_PER_DAY", "20"))  # cost cap: ~1.5 Cent per bike -> max ~9 €/Monat
+VISION_PER_DAY = int(os.environ.get("VISION_PER_DAY", "50"))  # cost cap: ~1.5 Cent per bike -> max ~22 €/Monat
 
 
 def vision_budget(state):
@@ -120,6 +120,17 @@ def scrub(text):
     return PII_RE.sub("[entfernt]", text or "")
 
 
+DEAL_HEADER = ["erfasst", "id", "modell", "titel", "preis", "schaetzwert", "rabatt_%", "jahr", "laufleistung_km",
+               "uvp", "uvp_quelle", "kaufrabatt_%", "altersabschlag_%", "privatabschlag_%", "km_abschlag_%",
+               "system2_%", "servicekosten", "entfernung_km", "link"]
+
+
+def deal_row(d, e, disc, y, odo, model_txt):
+    return [now(), d["id"], model_txt, d["title"], d["price"], e["value"], round(disc * 100), y, odo or "",
+            e["uvp"], e["uvp_quelle"], e["kaufrabatt_pct"], e["altersabschlag_pct"], e["privatabschlag_pct"],
+            e["km_abschlag_pct"], e["system_abschlag_pct"], e["servicekosten"], d["km"], d["url"]]
+
+
 def bike_report(d, est=None, note=""):
     os.makedirs(BIKES, exist_ok=True)
     path = os.path.join(BIKES, f"{d['id']}.md")
@@ -130,15 +141,22 @@ def bike_report(d, est=None, note=""):
     if note:
         lines.append(f"- Hinweis: {note}")
     if est:
-        lines += ["", "## Wertschätzung", f"- Antrieb: {est['drive']}", f"- Marke erkannt: {est['brand'] or '-'}",
-                  f"- Akku: {est['battery_wh'] or '?'} Wh", f"- Alter: ~{est['age']} Jahre",
-                  f"- Laufleistung: {str(est.get('mileage')) + ' km' if est.get('mileage') else 'unbekannt'}",
-                  f"- Wert intakt: {eur(est['intact_value'])}"
-                  + (f" (Mix aus Regel + Median von {est['comparables']} Vergleichsinseraten: {eur(est['comparable_median'])})"
-                     if est.get("comparable_median") else " (Regelmodell, zu wenig Vergleichsinserate)"),
-                  f"- Zustandsfaktor: {est['condition_factor']} {', '.join(est['condition_notes'])}",
-                  f"- **Geschätzter Wert: {eur(est['value'])}**",
-                  f"- **Rabatt: {est.get('discount', 0) * 100:.0f}%**"]
+        e = est
+        lines += ["", "## Preisbildung (Dossier-Methode)",
+                  "| Schritt | Wert |", "|---|---|",
+                  f"| Antrieb | {e['drive']} |",
+                  f"| UVP ({e['uvp_quelle']}) | {eur(e['uvp'])} |",
+                  f"| − vermuteter Rabatt beim Kauf ({e['year']}) | −{e['kaufrabatt_pct']} % → {eur(e['strassenpreis'])} |",
+                  f"| − Altersabschlag ({e['age']} J.) | −{e['altersabschlag_pct']} % → Händlerwert {eur(e['haendlerwert'])} |",
+                  f"| − Privat statt Händler | −{e['privatabschlag_pct']} % → {eur(e['intact_value'])} |",
+                  f"| km-Korrektur ({str(e['mileage']) + ' km' if e.get('mileage') else 'km unbekannt'}) | {e['km_abschlag_pct']:+} % |",
+                  f"| Bosch System 2 | {e['system_abschlag_pct']} % |",
+                  f"| Zustand | ×{e['condition_factor']} {', '.join(e['condition_notes'])} |",
+                  f"| − Servicekosten | −{eur(e['servicekosten'])} |",
+                  f"| Marktcheck | {e['comparables']} Vergleichsinserate" + (f", Median {eur(e['comparable_median'])}" if e.get('comparable_median') else "")
+                  + (" → gedeckelt" if e.get('gedeckelt') else "") + " |",
+                  f"| **Geschätzter Privatwert** | **{eur(e['value'])}** |",
+                  f"| **Rabatt zum Angebot** | **{e.get('discount', 0) * 100:.0f} %** |"]
     lines += ["", "## Beschreibung", "", scrub(d.get("description", ""))[:4000], ""]
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
@@ -305,11 +323,7 @@ def run_search():
                     f"Schäden: {vis.get('schaeden') or '-'}")
         if disc >= DEAL:
             stats["deal"] += 1
-            append_csv("deals.csv",
-                       ["erfasst", "id", "titel", "preis", "schaetzwert", "rabatt_%", "jahr", "laufleistung_km",
-                        "entfernung_km", "link"],
-                       [now(), d["id"], d["title"], d["price"], est["value"], round(disc * 100), y, odo or "",
-                        d["km"], d["url"]])
+            append_csv("deals.csv", DEAL_HEADER, deal_row(d, est, disc, y, odo, model_txt))
             bike_report(d, est, note=("Deal ≥30%. " + note).strip())
             add_to_watchlist(d["id"], f"Deal {round(disc * 100)}%: {d['title'][:40]}")
         if disc >= ALERT:

@@ -158,41 +158,59 @@ def condition(text, zustand=""):
     return max(factor, 0.2), notes
 
 
+# --- Preisbildung nach dem Dossier "Gebrauchte E-Bikes 2020–2023" (5 Schritte) ---
+# 1) echter Neupreis = UVP minus damals üblicher Kaufrabatt
+KAUFRABATT = {2019: 0.10, 2020: 0.05, 2021: 0.05, 2022: 0.20, 2023: 0.25, 2024: 0.15}
+PRIVAT_ABSCHLAG = 0.15          # 3) privat 10-20 % unter Händlerniveau -> Mitte
+SMART_RE = re.compile(r"smart\s*system|kiox\s*[35]00|purion\s*[24]00|led\s*remote|system\s*remote|cx\s*gen\s*5|\bsx\b", re.I)
+
+
+def km_adjust(km):
+    """4) Kilometer-Korrektur (Anteil) und fällige Servicekosten (EUR)."""
+    if not km:
+        return 0.0, 150          # unbekannt: neutral, Pauschale für Durchsicht
+    if km < 2000:
+        return 0.05, 0
+    if km <= 7000:
+        return 0.0, 100
+    if km <= 15000:
+        return -0.075, 200
+    return -0.15, 350
+
+
 def rule_value(text, year, zustand="", new_price=None, mileage=None):
     drive, line_price = drive_line(text)
     bf, brand = brand_factor(text)
     wh_ = battery_wh(text)
-    base = line_price * bf
     try:
         np_ = float(new_price) if new_price else None
     except (TypeError, ValueError):
         np_ = None
     if np_ and 800 <= np_ <= 15000:
-        base = np_  # real UVP from spec lookup beats the rule table
-    if wh_ and wh_ >= 625:
-        base += 250
-    elif wh_ and wh_ <= 400:
-        base -= 250
-    age = max(0, THIS_YEAR - (year or THIS_YEAR - 4))
-    keep = 0.70 * (0.88 ** max(0, age - 1)) if age >= 1 else 0.80   # used value when intact
-    keep = max(keep, 0.22)
-    z = (zustand or "").lower()
-    if z == "neu":
-        keep = min(keep * 1.15, 0.85)  # unused (often old-stock) bike: a bit above used value
-    elif "neuwertig" in z:
-        keep = min(keep * 1.08, 0.80)
-    intact = base * keep
-    cf, notes = condition(text, zustand)
+        uvp, uvp_src = np_, "Spezifikation"
+    else:
+        uvp = line_price * bf + (250 if wh_ and wh_ >= 625 else -250 if wh_ and wh_ <= 400 else 0)
+        uvp_src = "geschätzt"
+    y = year or THIS_YEAR - 4
+    kr = KAUFRABATT.get(y, 0.10)
+    street = uvp * (1 - kr)
+    age = max(0, THIS_YEAR - y)
+    keep = 0.75 * 0.87 ** (age - 1) if age >= 1 else 0.85      # 2) Restwert-Formel (Händlerniveau)
+    dealer = street * keep
+    private = dealer * (1 - PRIVAT_ABSCHLAG)
     km = mileage if mileage else find_mileage(text)
-    mf = mileage_factor(km)
-    if mf < 1:
-        cf = max(0.2, cf * mf)
-        notes = notes + [f"Laufleistung {km:,} km (-{round((1 - mf) * 100)}%)".replace(",", ".")]
+    km_pct, service = km_adjust(km)
+    sys_pct = -0.05 if is_bosch(text) and not SMART_RE.search(text) else 0.0   # Bosch System 2
+    cf, notes = condition(text, zustand)
+    value = private * (1 + km_pct) * (1 + sys_pct) * cf - service
     return {
-        "mileage": km,
-        "drive": drive, "brand": brand, "battery_wh": wh_, "age": age,
-        "intact_value": round(intact), "condition_factor": round(cf, 2), "condition_notes": notes,
-        "value": round(intact * cf),
+        "mileage": km, "drive": drive, "brand": brand, "battery_wh": wh_, "age": age, "year": y,
+        "uvp": round(uvp), "uvp_quelle": uvp_src, "kaufrabatt_pct": round(kr * 100), "strassenpreis": round(street),
+        "altersabschlag_pct": round((1 - keep) * 100), "haendlerwert": round(dealer),
+        "privatabschlag_pct": round(PRIVAT_ABSCHLAG * 100), "km_abschlag_pct": round(km_pct * 100, 1),
+        "system_abschlag_pct": round(sys_pct * 100), "servicekosten": service,
+        "intact_value": round(private), "condition_factor": round(cf, 2), "condition_notes": notes,
+        "value": max(50, round(value)),
     }
 
 
@@ -227,15 +245,11 @@ def comparable_median(ad_title, year, motor="bosch"):
 
 def estimate(title, text, zustand="", year=None, new_price=None, mileage=None):
     full = f"{title}\n{text}"
-    r = rule_value(full, year, zustand, new_price, mileage)
+    r = rule_value(full, year, zustand, new_price=new_price, mileage=mileage)
     med, n = comparable_median(title, year, "specialized" if is_brose(full) and not is_bosch(full) else "bosch")
-    if med:
-        intact = round(0.5 * r["intact_value"] + 0.5 * med)
-        r["comparables"] = n
-        r["comparable_median"] = med
-        r["intact_value"] = intact
-        r["value"] = round(intact * r["condition_factor"])
-    else:
-        r["comparables"] = n
-        r["comparable_median"] = None
+    r["comparables"], r["comparable_median"], r["gedeckelt"] = n, med, False
+    # 5) Marktcheck: Angebotsmedian (x0.9) ist Obergrenze für einen intakten Privatpreis
+    if med and r["value"] > med * r["condition_factor"]:
+        r["value"] = round(med * r["condition_factor"])
+        r["gedeckelt"] = True
     return r
