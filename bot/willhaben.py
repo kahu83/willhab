@@ -19,7 +19,7 @@ RADIUS_KM = 170
 _NEXT = re.compile(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', re.S)
 
 
-def _get(url, tries=4):
+def _get(url, tries=3):
     last = None
     for i in range(tries):
         try:
@@ -30,8 +30,8 @@ def _get(url, tries=4):
             if e.code in (404, 410):
                 return e.code, ""
             last = e
-            if e.code == 429:  # rate limited: back off longer
-                time.sleep(30 * (i + 1))
+            if e.code == 429:  # rate limited: back off a bit longer
+                time.sleep(15 * (i + 1))
                 continue
         except Exception as e:  # network hiccup
             last = e

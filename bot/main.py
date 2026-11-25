@@ -346,13 +346,33 @@ def run_search():
 def run_watch():
     wstate = load(os.path.join(ROOT, ".watch_state.json"), {})
     ids = watchlist_ids()
+    # least recently checked first, so a run cut short by rate limits resumes next time
+    ids.sort(key=lambda i: (wstate.get(i) or {}).get("checked", ""))
+    deadline = time.time() + 60 * int(os.environ.get("WATCH_MAX_MIN", "20"))
+    fails = 0
     print(f"{now()}: prüfe {len(ids)} Watchlist-Anzeigen")
+    try:
+        _watch_loop(ids, wstate, deadline, fails)
+    finally:
+        save(os.path.join(ROOT, ".watch_state.json"), wstate)
+        write_overview(wstate)
+
+
+def _watch_loop(ids, wstate, deadline, fails):
+    done = 0
     for ad_id in ids:
+        if time.time() > deadline or fails >= 3:
+            print(f"  Abbruch nach {done} Anzeigen (Zeit/Ratenlimit), Rest beim nächsten Lauf")
+            break
         try:
             d = wh.detail(ad_id)
+            fails = 0
         except Exception as e:  # rate limit / network: skip this ad, next run retries
             print(f"  {ad_id} übersprungen: {e}")
+            fails += 1
+            time.sleep(20)
             continue
+        done += 1
         time.sleep(2.5)
         cur = {"price": d.get("price"), "status": d.get("status"),
                "desc_hash": hashlib.sha1((d.get("description") or "").encode()).hexdigest()[:10],
@@ -362,7 +382,8 @@ def run_watch():
                "ablauf": d.get("ablauf") or (wstate.get(ad_id) or {}).get("ablauf", ""),
                "kategorie": d.get("kategorie") or (wstate.get(ad_id) or {}).get("kategorie", ""),
                "url": d.get("url") or (wstate.get(ad_id) or {}).get("url", ""),
-               "expiry_pushed": (wstate.get(ad_id) or {}).get("expiry_pushed", "")}
+               "expiry_pushed": (wstate.get(ad_id) or {}).get("expiry_pushed", ""),
+               "checked": now()}
         old = wstate.get(ad_id)
         changes = []
         if old is None:
@@ -392,8 +413,6 @@ def run_watch():
                  url=cur["url"], prio="default", tags="hourglass")
             cur["expiry_pushed"] = cur["ablauf"]
         wstate[ad_id] = cur
-    save(os.path.join(ROOT, ".watch_state.json"), wstate)
-    write_overview(wstate)
 
 
 def parse_dt(v):
