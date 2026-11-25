@@ -93,3 +93,31 @@ def analyze(ad):
     print(f"  vision: {out.get('marke')} {out.get('modell')} {out.get('modelljahr')} "
           f"{out.get('motor_hersteller')} {out.get('bosch_linie')} ({out.get('sicherheit')}, {out['_tokens']} tok)")
     return out
+
+
+ODO_PROMPT = """Schau dir die Fotos dieses E-Bike-Inserats an. Ist auf einem Foto ein Display/Tacho mit der
+Gesamt-Kilometerleistung (ODO, Gesamt, Total) zu sehen? Lies den Wert ab. Nicht die Reichweite, nicht Tages-km (TRIP).
+Wenn kein Foto es zeigt, nimm die Laufleistung aus dem Text, sonst null.
+Antworte NUR mit JSON: {"laufleistung_km": 1234 oder null, "quelle": "Foto|Text|keine", "foto_nr": 1 oder null}"""
+
+
+def read_odometer(ad, max_images=10):
+    """Cheap pass: only the odometer reading, no web search."""
+    if not enabled():
+        return None
+    import anthropic
+    client = anthropic.Anthropic(max_retries=2, timeout=120)
+    content = [{"type": "image", "source": {"type": "url", "url": u}} for u in (ad.get("images") or [])[:max_images]]
+    content.append({"type": "text", "text": f"{ODO_PROMPT}\n\nTitel: {ad.get('title')}\nBeschreibung:\n{(ad.get('description') or '')[:2000]}"})
+    try:
+        resp = client.messages.create(model=MODEL, max_tokens=300, output_config={"effort": "low"},
+                                      messages=[{"role": "user", "content": content}])
+    except anthropic.APIError as e:
+        print("odo error", ad.get("id"), e)
+        return None
+    txt = "".join(getattr(b, "text", "") for b in resp.content)
+    m = re.search(r"\{.*\}", txt, re.S)
+    try:
+        return json.loads(m.group(0)) if m else None
+    except ValueError:
+        return None

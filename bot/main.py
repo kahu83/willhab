@@ -447,9 +447,33 @@ def run_batch():
         print("BATCH|" + "|".join(str(x) for x in r))
 
 
+def run_odo():
+    """Re-read odometer (Tacho) photos for the ids in data/odo_ids.txt -> data/laufleistung_fotos.csv."""
+    from concurrent.futures import ThreadPoolExecutor
+    ids = [l.strip() for l in open(os.path.join(ROOT, "odo_ids.txt")) if l.strip()]
+    details = []
+    for i in ids:
+        d = wh.detail(i)
+        time.sleep(0.7)
+        if d.get("status") != "geloescht":
+            details.append(d)
+    with ThreadPoolExecutor(max_workers=5) as ex:
+        res = list(ex.map(vision.read_odometer, details))
+    path = os.path.join(ROOT, "laufleistung_fotos.csv")
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f, delimiter=";")
+        w.writerow(["id", "laufleistung_km", "quelle", "foto_nr", "titel", "link"])
+        for d, v in zip(details, res):
+            v = v or {}
+            w.writerow([d["id"], v.get("laufleistung_km") or "", v.get("quelle") or "", v.get("foto_nr") or "",
+                        d["title"][:60], d["url"]])
+    found = sum(1 for v in res if v and v.get("laufleistung_km"))
+    print(f"ODO {found}/{len(details)} mit Laufleistung ({len(ids) - len(details)} gelöscht)")
+
+
 if __name__ == "__main__":
     os.makedirs(ROOT, exist_ok=True)
     cmd = sys.argv[1] if len(sys.argv) > 1 else "search"
-    {"search": run_search, "watch": run_watch, "visiontest": run_visiontest, "batch": run_batch,
+    {"search": run_search, "watch": run_watch, "visiontest": run_visiontest, "batch": run_batch, "odo": run_odo,
      "ping": lambda: push("Willhaben-Roboter 🚲", "Test: Hier kommen deine Schnäppchen-Alarme (≥45% unter Wert) an!",
                           tags="tada")}[cmd]()
