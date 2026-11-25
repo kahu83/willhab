@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-25 19:37
+Stand: 2026-11-25 21:26
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -99,3 +99,16 @@ Stand: 2026-11-25 19:37
 | [785575936](fahrraeder/785575936.md) | Kassette Shimano DEORE XT CS-M8000 11S (11:46T) | 40 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
 | [2049609737](fahrraeder/2049609737.md) | Dt Swiss Nabe 15x110 | 35 € | ? | verfuegbar | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
 | [1015599562](fahrraeder/1015599562.md) | e*thirteen (by The Hive) MTB Hinterradnabe - Boost | 40 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [1123260343](fahrraeder/1123260343.md) | Evoc Protektor vest | 45 € | ? | verfuegbar | 19.10.2026 | 03.12.2026 | Fahrradbekleidung › Fahrrad Protektoren |
+| [881889432](fahrraeder/881889432.md) |  | ? | ? | geloescht | – | – |  |
+| [1360694329](fahrraeder/1360694329.md) | (reserviert) Protektorenhose Wedze Größe L | 10 € | ? | reserviert | 14.11.2026 | 29.12.2026 | Fahrradbekleidung › Fahrrad Protektoren |
+| [1306119517](fahrraeder/1306119517.md) | SPARK Spoon 350 / 318 MTB Vorbau auch f. E-MTB | E | 40 € | ? | verfuegbar | 12.04.2026 | – | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [767746825](fahrraeder/767746825.md) | pv schienen | 8 € | ? | verfuegbar | 31.01.2024 | – | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
+| [1668369621](fahrraeder/1668369621.md) | Kabeldurchführung für welleternit für Photovoltaik | 2 € | ? | verfuegbar | 23.10.2026 | 07.12.2026 | Heizung / Öfen / Klima › Heizgeräte / -kessel |
+| [984417322](fahrraeder/984417322.md) | Vestwoods VE51200W 10,24kWh Photovoltaik Speicher  | 1.738 € | ? | verfuegbar | 17.09.2024 | – | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
+| [1102842939](fahrraeder/1102842939.md) | Hayes Dominion A4 Vorderrad Scheibenbremse schwarz | 139 € | ? | verfuegbar | 22.10.2026 | 06.12.2026 | Fahrrad Ersatzteile / Zubehör › Bremsen |
+| [1524316357](fahrraeder/1524316357.md) |  | ? | ? | geloescht | – | – |  |
+| [1198535571](fahrraeder/1198535571.md) | Audi A4 B7, B8, A6 4F, Mercedes W211, W212 Zubehör | 560 € | ? | verfuegbar | 27.02.2026 | – | Reifen / Felgen › Komplettradsätze |
+| [1966755018](fahrraeder/1966755018.md) | Mercedes benz w211 e270 cdi teile verkaufe preis i | 100 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Karosserie › Zubehör / Einzelteile |
+| [1012290827](fahrraeder/1012290827.md) | Segelyacht V-Cat38 | 16.900 € | ? | verfuegbar | 23.10.2026 | 07.12.2026 | Segelboote / Segelyachten › Segelyachten |
+| [188691416](fahrraeder/188691416.md) | Passgenauer Laderaumboden für Kleintransporter ab  | 70 € | ? | verfuegbar | 11.01.2017 | – | Transport / Trägersysteme › Kofferraumzubehör |
