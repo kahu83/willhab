@@ -383,7 +383,9 @@ def _watch_loop(ids, wstate, deadline, fails):
                "kategorie": d.get("kategorie") or (wstate.get(ad_id) or {}).get("kategorie", ""),
                "url": d.get("url") or (wstate.get(ad_id) or {}).get("url", ""),
                "expiry_pushed": (wstate.get(ad_id) or {}).get("expiry_pushed", ""),
-               "checked": now()}
+               "checked": now(),
+               "image": ((d.get("images") or [None])[0]) or (wstate.get(ad_id) or {}).get("image", ""),
+               "since": (wstate.get(ad_id) or {}).get("since") or now()}
         old = wstate.get(ad_id)
         changes = []
         if old is None:
@@ -441,6 +443,65 @@ def write_overview(wstate):
                          f"{fmt_date(v.get('online_seit'))} | {fmt_date(v.get('ablauf'))} | {v.get('kategorie') or ''} |")
     with open(os.path.join(ROOT, "WATCHLIST.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
+    write_watchlist_html(wstate, ids)
+
+
+STATUS_STYLE = {"verfuegbar": ("verfügbar", "#1f6f54", "#e3f2ec"), "reserviert": ("reserviert", "#8a6100", "#fdf5dd"),
+                "verkauft": ("verkauft", "#9b2c2c", "#fde8e8"), "geloescht": ("offline / abgelaufen", "#5f6a63", "#eceeed")}
+
+
+def _watch_log():
+    path = os.path.join(ROOT, "watchlist_log.csv")
+    out = {}
+    if os.path.exists(path):
+        for r in csv.DictReader(open(path, encoding="utf-8"), delimiter=";"):
+            out.setdefault(r["id"], []).append(r)
+    return out
+
+
+def write_watchlist_html(wstate, ids=None):
+    """Document-style watchlist (one card per ad: photo, facts, change history) -> data/WATCHLIST.html.
+    Uploaded to Google Drive as a Google Doc by the evening task."""
+    from html import escape as h
+    ids = ids or watchlist_ids()
+    log = _watch_log()
+    rank = {"verfuegbar": 0, "reserviert": 1, "verkauft": 2, "geloescht": 3}
+    items = [(k, wstate[k]) for k in ids if k in wstate]
+    items.sort(key=lambda kv: (rank.get(kv[1].get("status"), 4), kv[1].get("ablauf") or "9999"))
+    n = {s: sum(1 for _, v in items if v.get("status") == s) for s in rank}
+    soon = [v for _, v in items if v.get("status") == "verfuegbar" and parse_dt(v.get("ablauf"))
+            and (parse_dt(v.get("ablauf")).astimezone(VIE).date() - datetime.now(VIE).date()).days <= 2]
+    out = [f"<html><head><meta charset='utf-8'><title>Watchlist</title></head>"
+           f"<body style='font-family:Arial,sans-serif;color:#1d2420'>",
+           "<h1 style='color:#1f6f54'>🚲 Meine willhaben-Watchlist</h1>",
+           f"<p style='color:#5f6a63'>Stand {now()} · {len(items)} Anzeigen · {n['verfuegbar']} verfügbar · "
+           f"{n['reserviert']} reserviert · {n['verkauft']} verkauft · {n['geloescht']} offline</p>"]
+    if soon:
+        out.append("<p style='background:#fff1e8;padding:8px'><b>⏳ Läuft bald ab:</b> " +
+                   ", ".join(f"{h(v.get('title', '')[:40])} ({fmt_date(v.get('ablauf'))})" for v in soon) + "</p>")
+    for k, v in items:
+        lab, fg, bg = STATUS_STYLE.get(v.get("status"), (v.get("status") or "?", "#333", "#eee"))
+        url = v.get("url") or f"https://www.willhaben.at/iad/object?adId={k}"
+        img = (f"<a href='{h(url)}'><img src='{h(v['image'])}' width='160' height='120' "
+               f"style='object-fit:cover;border-radius:8px'></a>") if v.get("image") else "<i>kein Foto</i>"
+        changes = [r for r in log.get(k, []) if r.get("änderung") != "neu überwacht"]
+        hist = "".join(f"<tr><td></td><td style='color:#c2410c;font-size:13px'>↳ {h(r['zeit'])}: "
+                       f"<b>{h(r['änderung'])}</b> {h(r['alt'])} → {h(r['neu'])}</td></tr>" for r in changes)
+        out.append(
+            "<table style='width:100%;border-collapse:collapse;margin:14px 0;border-bottom:1px solid #dde1dc'>"
+            f"<tr><td style='width:170px;vertical-align:top;padding:6px'>{img}</td>"
+            "<td style='vertical-align:top;padding:6px'>"
+            f"<a href='{h(url)}' style='font-size:16px;font-weight:bold;color:#1d2420'>{h(v.get('title') or '(nicht mehr abrufbar)')}</a><br>"
+            f"<span style='font-size:18px;font-weight:bold'>{eur(v.get('price'))}</span> &nbsp; "
+            f"<span style='background:{bg};color:{fg};padding:2px 8px;font-size:12px'>{lab}</span><br>"
+            f"<span style='color:#5f6a63;font-size:13px'>{h(v.get('kategorie') or '')}</span><br>"
+            f"<span style='font-size:13px'>Online seit <b>{fmt_date(v.get('online_seit'))}</b> · "
+            f"läuft ab <b>{fmt_date(v.get('ablauf'))}</b> · überwacht seit <b>{h((v.get('since') or '')[:10]) or '–'}</b>"
+            + (f" · {v['mileage']:,} km".replace(",", ".") if v.get("mileage") else "") + "</span>"
+            "</td></tr>" + hist + "</table>")
+    out.append("</body></html>")
+    with open(os.path.join(ROOT, "WATCHLIST.html"), "w", encoding="utf-8") as f:
+        f.write("\n".join(out))
 
 
 def run_visiontest():
