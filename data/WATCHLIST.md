@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-25 21:26
+Stand: 2026-11-26 06:13
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
