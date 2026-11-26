@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-26 06:13
+Stand: 2026-11-26 12:08
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -85,7 +85,7 @@ Stand: 2026-11-26 06:13
 | [1726155840](fahrraeder/1726155840.md) | Rock Shox ZEB Mud Guard | 10 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1988075212](fahrraeder/1988075212.md) | Trek Rail 7 E-Bike Enduro / Freeride 29" L - Top Z | 2.000 € | ? | verfuegbar | 17.10.2026 | 01.12.2026 | Fahrräder › E-Bikes |
 | [793646708](fahrraeder/793646708.md) | SCOTT Axis eRIDE 20 - E-Bike | Baujahr 2020 | 625W | 950 € | 11476 km | verfuegbar | 16.10.2026 | 30.11.2026 | Fahrräder › E-Bikes |
-| [1481121810](fahrraeder/1481121810.md) | FORMULA CURA 4 Scheibenbremsen Paar | 179 € | ? | verfuegbar | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Bremsen |
+| [1481121810](fahrraeder/1481121810.md) | FORMULA CURA 4 Scheibenbremsen Paar | 179 € | ? | geloescht | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Bremsen |
 | [1302204579](fahrraeder/1302204579.md) | (verkauft) Mountainbike Fully Ktm | 1.950 € | 2000 km | verkauft | 06.10.2026 | 20.11.2026 | Fahrräder › Mountainbikes |
 | [1893915289](fahrraeder/1893915289.md) | (verkauft) KTM E-Bike Macina Sport | 950 € | ? | verkauft | 11.10.2026 | 25.11.2026 | Fahrräder › E-Bikes |
 | [1386434714](fahrraeder/1386434714.md) | KTM Kapoho 2973 | 2.000 € | ? | verfuegbar | 10.11.2026 | 25.12.2026 | Fahrräder › E-Bikes |
@@ -97,7 +97,7 @@ Stand: 2026-11-26 06:13
 | [792153108](fahrraeder/792153108.md) | Federgabel RockShox Lyrik Ultimate 29er, 180 mm En | 180 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1446084012](fahrraeder/1446084012.md) | FOX 36 AWL HD Sport 29" 160mm RAIL 2.0 Federgabel | 189 € | ? | verfuegbar | 12.11.2026 | 27.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [785575936](fahrraeder/785575936.md) | Kassette Shimano DEORE XT CS-M8000 11S (11:46T) | 40 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
-| [2049609737](fahrraeder/2049609737.md) | Dt Swiss Nabe 15x110 | 35 € | ? | verfuegbar | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [2049609737](fahrraeder/2049609737.md) | Dt Swiss Nabe 15x110 | 35 € | ? | geloescht | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
 | [1015599562](fahrraeder/1015599562.md) | e*thirteen (by The Hive) MTB Hinterradnabe - Boost | 40 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
 | [1123260343](fahrraeder/1123260343.md) | Evoc Protektor vest | 45 € | ? | verfuegbar | 19.10.2026 | 03.12.2026 | Fahrradbekleidung › Fahrrad Protektoren |
 | [881889432](fahrraeder/881889432.md) |  | ? | ? | geloescht | – | – |  |
