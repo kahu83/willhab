@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-26 15:43
+Stand: 2026-11-26 18:11
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -70,7 +70,7 @@ Stand: 2026-11-26 15:43
 | [1777775774](fahrraeder/1777775774.md) | E Bike Schutz | 30 € | ? | verfuegbar | 29.10.2026 | 13.12.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
 | [1185205700](fahrraeder/1185205700.md) | Kinder E-Bike Apache | 950 € | 1817 km | verfuegbar | 30.10.2026 | 14.12.2026 | Fahrräder › E-Bikes |
 | [1347028291](fahrraeder/1347028291.md) | 12 Fach Kassette NEU für XD Freilauf | 55 € | ? | verfuegbar | 30.10.2026 | 14.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
-| [1143798288](fahrraeder/1143798288.md) | Akku 750 Power Tube von Bosch | 240 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
+| [1143798288](fahrraeder/1143798288.md) | (verkauft) Akku 750 Power Tube von Bosch | 240 € | ? | verkauft | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
 | [1884412009](fahrraeder/1884412009.md) | Specialized Woman's Turbo Levo Short Travel FSR CE | 1.100 € | ? | verfuegbar | 25.10.2026 | 09.12.2026 | Fahrräder › E-Bikes |
 | [993291035](fahrraeder/993291035.md) | KTM Macina Kapoho 7973 - 750 Wh | Jahresservice ne | 1.890 € | 5100 km | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrräder › E-Bikes |
 | [1594663858](fahrraeder/1594663858.md) | E Bike Batterie, Akku, Bosch Power Tube 625 | 210 € | ? | verfuegbar | 15.10.2026 | 29.11.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
