@@ -473,7 +473,7 @@ def write_watchlist_html(wstate, ids=None):
     items.sort(key=lambda kv: (0 if kv[0] in fresh else 1, rank.get(kv[1].get("status"), 4), kv[1].get("ablauf") or "9999"))
     n = {s: sum(1 for _, v in items if v.get("status") == s) for s in rank}
     soon = [v for _, v in items if v.get("status") == "verfuegbar" and parse_dt(v.get("ablauf"))
-            and (parse_dt(v.get("ablauf")).astimezone(VIE).date() - datetime.now(VIE).date()).days <= 2]
+            and (parse_dt(v.get("ablauf")).astimezone(VIE).date() - datetime.now(VIE).date()).days in (0, 1, 2)]
     out = [f"<html><head><meta charset='utf-8'><title>Watchlist</title></head>"
            f"<body style='font-family:Arial,sans-serif;color:#1d2420'>",
            "<h1 style='color:#1f6f54'>🚲 Meine willhaben-Watchlist</h1>",
@@ -507,7 +507,7 @@ def write_watchlist_html(wstate, ids=None):
             "</td></tr>" + hist + "</table>")
     out.append("</body></html>")
     with open(os.path.join(ROOT, "WATCHLIST.html"), "w", encoding="utf-8") as f:
-        f.write("\n".join(out))
+        f.write("\n".join(out).encode("ascii", "xmlcharrefreplace").decode())  # entities: Google Docs import breaks raw emoji
 
 
 def run_visiontest():
