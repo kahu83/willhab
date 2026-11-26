@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-26 12:08
+Stand: 2026-11-26 15:43
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -25,7 +25,7 @@ Stand: 2026-11-26 12:08
 | [1942696663](fahrraeder/1942696663.md) | Victron SmartSolar MPPT 250/100-Tr VE. Can - NEU / | 450 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1212347001](fahrraeder/1212347001.md) | Adapterwinkel M10 | 2 € | ? | verfuegbar | 15.11.2026 | 30.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1083134844](fahrraeder/1083134844.md) | Wechselrichter und 70 Stk PV-Module | 1.400 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
-| [848646332](fahrraeder/848646332.md) | PV Speicher Taico LiFePO4 20,48kWh Batterie Module | 2.650 € | ? | verfuegbar | 08.11.2026 | 23.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
+| [848646332](fahrraeder/848646332.md) | PV Speicher Taico LiFePO4 20,48kWh Batterie Module | 2.500 € | ? | verfuegbar | 08.11.2026 | 23.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1114186968](fahrraeder/1114186968.md) | BYD Lithium Battery 2,5kWh | 80 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1109403283](fahrraeder/1109403283.md) | Photovoltaik Module | 5 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1405300460](fahrraeder/1405300460.md) | PV Anlage | 100 € | ? | verfuegbar | 31.10.2026 | 15.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
@@ -45,7 +45,7 @@ Stand: 2026-11-26 12:08
 | [1704689076](fahrraeder/1704689076.md) | Mobiles Klimagerät | 50 € | ? | verfuegbar | 27.10.2026 | 11.12.2026 | Klimageräte / Ventilatoren › Klimageräte |
 | [1709407410](fahrraeder/1709407410.md) | Mobiles Klimagerät SHE-KL18071F | 39 € | ? | verfuegbar | 20.10.2026 | 04.12.2026 | Klimageräte / Ventilatoren › Klimageräte |
 | [1056701095](fahrraeder/1056701095.md) | Alu L-Profil 40x40x4mm, 2090mm lang, mit Langlöche | 3 € | ? | verfuegbar | 31.10.2026 | 15.12.2026 | Eisenwaren › Beschläge / Scharniere |
-| [1478073983](fahrraeder/1478073983.md) | Photovoltaik Module | 10 € | ? | verfuegbar | 11.10.2026 | 25.11.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
+| [1478073983](fahrraeder/1478073983.md) | Photovoltaik Module | 10 € | ? | geloescht | 11.10.2026 | 25.11.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1600298448](fahrraeder/1600298448.md) | PV-Speicher 16,5kWh inkl. Wechselrichter - mit jed | 3.700 € | ? | verfuegbar | 06.11.2026 | 21.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1963653403](fahrraeder/1963653403.md) |  | ? | ? | geloescht | – | – |  |
 | [1647145300](fahrraeder/1647145300.md) | Dt swiss ex 471 laufrad mit mavic narbe | 90 € | ? | verfuegbar | 30.10.2026 | 14.12.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
@@ -60,7 +60,7 @@ Stand: 2026-11-26 12:08
 | [945485276](fahrraeder/945485276.md) | Hoval CombiVal WPER (300) - Brauchwasser-Wärmepump | 250 € | ? | verfuegbar | 26.10.2026 | 10.12.2026 | Heizung / Öfen / Klima › Boiler |
 | [1174080062](fahrraeder/1174080062.md) | Wärmepumpe für Schwimmbad | 50 € | ? | verfuegbar | 02.11.2026 | 17.12.2026 | Pools / Biotope › Heizungen |
 | [1022737853](fahrraeder/1022737853.md) |  | ? | ? | geloescht | – | – |  |
-| [1682701657](fahrraeder/1682701657.md) | Fox 36 Rhythm 160mm 29 Zoll | 99 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1682701657](fahrraeder/1682701657.md) | Fox 36 Rhythm 160mm 29 Zoll | 89 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1553002343](fahrraeder/1553002343.md) | (verkauft) Cane Creek Helm Mk2 Air 29" Boost 160mm | 222 € | ? | verkauft | 25.10.2026 | 09.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1544143603](fahrraeder/1544143603.md) | Race Face Getta Grip Fahrrad Griffe | 10 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1272049794](fahrraeder/1272049794.md) | Griffe RACEFACE Getta Grip 33 schwarz/ kashmoney 1 | 18 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
