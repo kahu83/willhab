@@ -467,7 +467,10 @@ def write_watchlist_html(wstate, ids=None):
     log = _watch_log()
     rank = {"verfuegbar": 0, "reserviert": 1, "verkauft": 2, "geloescht": 3}
     items = [(k, wstate[k]) for k in ids if k in wstate]
-    items.sort(key=lambda kv: (rank.get(kv[1].get("status"), 4), kv[1].get("ablauf") or "9999"))
+    cutoff = (datetime.now(VIE) - timedelta(hours=24)).strftime("%Y-%m-%d %H:%M")
+    fresh = {k for k, rows in log.items() if any(r.get("änderung") == "Status" and r.get("zeit", "") >= cutoff for r in rows)}
+    # freshly changed status first (24 h), then available ... offline at the bottom
+    items.sort(key=lambda kv: (0 if kv[0] in fresh else 1, rank.get(kv[1].get("status"), 4), kv[1].get("ablauf") or "9999"))
     n = {s: sum(1 for _, v in items if v.get("status") == s) for s in rank}
     soon = [v for _, v in items if v.get("status") == "verfuegbar" and parse_dt(v.get("ablauf"))
             and (parse_dt(v.get("ablauf")).astimezone(VIE).date() - datetime.now(VIE).date()).days <= 2]
@@ -488,8 +491,11 @@ def write_watchlist_html(wstate, ids=None):
         hist = "".join(f"<tr><td></td><td style='color:#c2410c;font-size:13px'>↳ {h(r['zeit'])}: "
                        f"<b>{h(r['änderung'])}</b> {h(r['alt'])} → {h(r['neu'])}</td></tr>" for r in changes)
         out.append(
-            "<table style='width:100%;border-collapse:collapse;margin:14px 0;border-bottom:1px solid #dde1dc'>"
-            f"<tr><td style='width:170px;vertical-align:top;padding:6px'>{img}</td>"
+            "<table style='width:100%;border-collapse:collapse;margin:14px 0;border-bottom:1px solid #dde1dc"
+            + (";background:#fff4c2" if k in fresh else "") + "'>"
+            + (f"<tr><td colspan='2' style='background:#f5c518;color:#1d2420;font-weight:bold;padding:4px 8px'>"
+               f"🆕 Status geändert: {h(STATUS_STYLE.get(v.get('status'), (v.get('status') or '?',))[0])}</td></tr>" if k in fresh else "")
+            + f"<tr><td style='width:170px;vertical-align:top;padding:6px'>{img}</td>"
             "<td style='vertical-align:top;padding:6px'>"
             f"<a href='{h(url)}' style='font-size:16px;font-weight:bold;color:#1d2420'>{h(v.get('title') or '(nicht mehr abrufbar)')}</a><br>"
             f"<span style='font-size:18px;font-weight:bold'>{eur(v.get('price'))}</span> &nbsp; "
