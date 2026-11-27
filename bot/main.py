@@ -163,6 +163,40 @@ def bike_report(d, est=None, note=""):
 
 
 # ---------------------------------------------------------------- watchlist add via ntfy
+CHECKED = os.path.join(ROOT, "geprueft.json")
+BACKFILL = False  # recheck mode: only record, no pushes / csv / watchlist / state
+
+
+def record_check(d, verdict, reason, year=None, year_src="", vis=None, est=None, disc=None, odo=None, defect=False):
+    """Every bike the search looked at in detail -> data/geprueft.json (with photo thumb + calculation)."""
+    data = load(CHECKED, {})
+    old = data.get(d["id"], {})
+    e = dict(est or {})
+    e.pop("condition_notes", None)
+    data[d["id"]] = {
+        "id": d["id"], "erfasst": old.get("erfasst") or now(), "geprueft": now(),
+        "title": d.get("title", ""), "url": d.get("url", ""), "price": d.get("price"),
+        "entfernung_km": d.get("km"), "ort": d.get("location") or "", "zustand": d.get("zustand") or "",
+        "online_seit": (d.get("online_seit") or "")[:10], "kategorie": d.get("kategorie") or "",
+        "verdict": verdict, "grund": reason, "defekt": bool(defect),
+        "jahr": year, "jahr_quelle": year_src, "laufleistung_km": odo,
+        "motor_text": "Bosch" if val.is_bosch(f"{d.get('title','')} {d.get('description','')}") else
+                      "Brose" if val.is_brose(f"{d.get('title','')} {d.get('description','')}") else "",
+        "vision": {k: (vis or {}).get(k) for k in ("marke", "modell", "modelljahr", "motor_hersteller", "bosch_linie",
+                                                     "akku_wh", "uvp_eur", "laufleistung_km", "schaeden", "sicherheit",
+                                                     "quelle", "notiz")} if vis else None,
+        "calc": e or None, "zustand_notizen": (est or {}).get("condition_notes") or [],
+        "rabatt_pct": round(disc * 100) if disc is not None else None,
+        "thumb": bool(d.get("images")),
+    }
+    if d.get("images"):
+        ensure_thumb(d["id"], d["images"][0])
+    if len(data) > 800:
+        for k in sorted(data, key=lambda k: data[k].get("geprueft", ""))[:-800]:
+            data.pop(k)
+    save(CHECKED, data)
+
+
 def poll_add_topic(state):
     """Hannes can share a willhaben link to topic <TOPIC>-add in the ntfy app -> goes on watchlist."""
     since = state.get("add_since", "12h")
@@ -218,12 +252,20 @@ def run_search():
     seen = state.setdefault("seen", {})
     first_run = not seen and os.environ.get("FORCE_EVAL") != "1"
 
-    for ad_id in poll_add_topic(state):
+    for ad_id in ([] if BACKFILL else poll_add_topic(state)):
         if add_to_watchlist(ad_id, "per ntfy"):
             push("Watchlist ✅", f"Anzeige {ad_id} wird jetzt 3x täglich überwacht.", prio="low", tags="eyes")
 
     new_ads = []
-    for page in (1, 2):
+    if BACKFILL:
+        since = os.environ.get("BACKFILL_SINCE", "2026-11-25")
+        for page in range(1, 8):
+            _, ads = wh.search(rows=200, page=page, PRICE_TO=MAX_PRICE)
+            new_ads += [a for a in ads if a["id"] in seen and seen[a["id"]][:10] >= since]
+            if not ads:
+                break
+            time.sleep(2)
+    for page in (() if BACKFILL else (1, 2)):
         _, ads = wh.search(rows=200, page=page)
         fresh = [a for a in ads if a["id"] not in seen]
         new_ads += fresh
@@ -233,13 +275,15 @@ def run_search():
     # defect listings also by Zustand filter (catches bikes without the word in title)
     _, dz = wh.search(path=wh.EBIKE_CAT + "/a/zustand-defekt-24", rows=100)
     defect_zustand = {a["id"] for a in dz}
-    new_ads += [a for a in dz if a["id"] not in seen and a["id"] not in {x["id"] for x in new_ads}]
+    new_ads += [a for a in dz if (a["id"] in seen if BACKFILL else a["id"] not in seen)
+                and a["id"] not in {x["id"] for x in new_ads}]
 
     print(f"{now()}: {len(new_ads)} neue Inserate")
     stats = {"defekt": 0, "deal": 0, "alert": 0}
     for a in new_ads:
-        seen[a["id"]] = a["published"] or now()
-        if first_run:
+        if not BACKFILL:
+            seen[a["id"]] = a["published"] or now()
+        if first_run and not BACKFILL:
             continue  # first run only learns the current listings
         if ONLY_PRIVATE and a["dealer"]:
             continue
@@ -268,15 +312,17 @@ def run_search():
         tyear, thint = val.find_year(full)
         too_old = tyear is not None and tyear < MIN_YEAR and not thint
         vis = None
-        if vision.enabled() and (text_ok or not other_motor) and not too_old and vision_budget(state):
+        if vision.enabled() and not BACKFILL and (text_ok or not other_motor) and not too_old and vision_budget(state):
             vis = vision.analyze(d)
         y = (vis or {}).get("modelljahr") or tyear or thint
+        ysrc = "Foto/Spezifikation" if (vis or {}).get("modelljahr") else "Text" if tyear else "Text (Hinweis)" if thint else ""
         try:
             y = int(y) if y else None
         except (TypeError, ValueError):
             y = tyear or thint
 
-        if a["id"] in defect_zustand or is_defect(d, d.get("zustand", "")):
+        defect = a["id"] in defect_zustand or is_defect(d, d.get("zustand", ""))
+        if defect and not BACKFILL:
             stats["defekt"] += 1
             if y and y >= MIN_YEAR:
                 model_d = f"{vis.get('marke')} {vis.get('modell')}" if vis and vis.get("marke") else d["title"]
@@ -288,15 +334,21 @@ def run_search():
                        [now(), d["id"], d["title"], d["price"], d["km"], val.find_mileage(full) or "",
                         d["location"], d.get("zustand"), d["url"]])
 
+        def rec(verdict, reason, est=None, disc=None, odo=None):
+            record_check(d, verdict, reason, year=y, year_src=ysrc, vis=vis, est=est, disc=disc, odo=odo, defect=defect)
         if not (d["price"] and d["price"] <= MAX_PRICE):
+            rec("aussortiert", f"Preis über {MAX_PRICE} €")
             continue
         sure = vis and vis.get("sicherheit") in ("hoch", "mittel")
         vm = (vis or {}).get("motor_hersteller") or "unbekannt"
         if sure and vm not in ("Bosch", "Brose", "unbekannt"):
+            rec("aussortiert", f"Motor laut Foto/Spezifikation: {vm}")
             continue  # photos/specs show another drive
         if not (text_ok or vm in ("Bosch", "Brose")):
+            rec("aussortiert", "kein Bosch-/Brose-Motor erkennbar" + (" (anderer Motor im Text)" if other_motor else ""))
             continue
         if y is None or y < MIN_YEAR:
+            rec("aussortiert", f"Modelljahr {y} vor {MIN_YEAR}" if y else "Modelljahr unbekannt")
             continue
         extra = ""
         if vis:
@@ -310,8 +362,14 @@ def run_search():
         est = val.estimate(d["title"], d["description"] + extra, d.get("zustand", ""), y,
                            new_price=(vis or {}).get("uvp_eur"), mileage=odo)
         if not est["value"]:
+            rec("aussortiert", "kein Schätzwert möglich", est=est, odo=odo)
             continue
         disc = 1 - d["price"] / est["value"]
+        rec("Alarm ≥45%" if disc >= ALERT else "Deal ≥30%" if disc >= DEAL else "bewertet",
+            f"{round(disc * 100)} % unter Schätzwert" if disc >= 0 else f"{round(-disc * 100)} % über Schätzwert",
+            est=est, disc=disc, odo=odo)
+        if BACKFILL:
+            continue
         est["discount"] = disc
         model_txt = f"{vis.get('marke')} {vis.get('modell')}" if vis else ""
         print(f"  {vm if vm != 'unbekannt' else 'Bosch/Brose'} {y}: {d['title'][:50]} {eur(d['price'])} vs {eur(est['value'])} -> {disc:.0%} {model_txt}")
@@ -337,6 +395,9 @@ def run_search():
     if len(seen) > 30000:
         for k in sorted(seen, key=lambda k: seen[k])[:-20000]:
             seen.pop(k)
+    if BACKFILL:
+        print("Nachtrag fertig:", len(load(CHECKED, {})), "geprüfte Räder")
+        return
     state["last_search"] = now()
     save(STATE, state)
     print("Ergebnis:", stats, "(Lernlauf)" if first_run else "")
@@ -780,6 +841,9 @@ def run_odo():
 if __name__ == "__main__":
     os.makedirs(ROOT, exist_ok=True)
     cmd = sys.argv[1] if len(sys.argv) > 1 else "search"
+    if cmd == "recheck":
+        BACKFILL = True
+        cmd = "search"
     {"search": run_search, "watch": run_watch, "visiontest": run_visiontest, "batch": run_batch, "odo": run_odo, "thumbs": run_thumbs,
      "ping": lambda: push("Willhaben-Roboter 🚲", "Test: Hier kommen deine Schnäppchen-Alarme (≥45% unter Wert) an!",
                           tags="tada")}[cmd]()
