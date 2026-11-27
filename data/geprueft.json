@@ -5746,5 +5746,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "852101743": {
+  "id": "852101743",
+  "erfasst": "2026-11-27 20:49",
+  "geprueft": "2026-11-27 20:49",
+  "title": "Diamant Juna + E Bike Fahrrad",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/diamant-juna-e-bike-fahrrad-852101743/",
+  "price": 1000.0,
+  "entfernung_km": 146.2,
+  "ort": "Wien",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Modelljahr 2017 vor 2019",
+  "defekt": false,
+  "jahr": 2017,
+  "jahr_quelle": "Foto/Spezifikation",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Diamant",
+   "modell": "Juna+ (Kettenschaltung, Shimano Alivio 9-Gang)",
+   "modelljahr": 2017,
+   "motor_hersteller": "Bosch",
+   "bosch_linie": "Active Line",
+   "akku_wh": 400,
+   "uvp_eur": 2499,
+   "laufleistung_km": null,
+   "schaeden": "",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "Die Spezifikation passt zu Foto und Text, aber der Verkäufer nennt Tektro-Bremsen statt Shimano M445, und es fehlt ein Kilometerstand."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
