@@ -5531,5 +5531,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1066684210": {
+  "id": "1066684210",
+  "erfasst": "2026-11-27 19:08",
+  "geprueft": "2026-11-27 19:08",
+  "title": "E-Bike/ Fat.",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-fat-1066684210/",
+  "price": 790.0,
+  "entfernung_km": 133.7,
+  "ort": "Neunkirchen",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "unbekannt",
+   "modell": "unbekannt (faltbares 20\" Fatbike, vermutlich No-Name/Import, 500W Heckmotor)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "keine eindeutigen Schäden sichtbar; Hinterrad/Kette verschmutzt",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "Kein Markenlogo erkennbar; Modell nicht identifizierbar, Angaben wie 500W und 40 km/h stammen nur aus dem Verkäufertext und sind nicht verifiziert."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
