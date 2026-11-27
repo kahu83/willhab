@@ -5417,5 +5417,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": false
+ },
+ "1083273662": {
+  "id": "1083273662",
+  "erfasst": "2026-11-27 17:31",
+  "geprueft": "2026-11-27 17:31",
+  "title": "Fischer E-Bike",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/fischer-e-bike-1083273662/",
+  "price": 600.0,
+  "entfernung_km": 163.2,
+  "ort": "Klagenfurt am Wörthersee",
+  "zustand": "Neuwertig",
+  "online_seit": "2026-11-26",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Fischer",
+   "modell": "unbekannt (vermutlich E-MTB mit 48-V-Mittelmotor, Modellreihe EM/Montis, genaue Variante nicht erkennbar)",
+   "modelljahr": null,
+   "motor_hersteller": "andere",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "leichte Gebrauchsspuren an Reifen, keine klaren Schäden sichtbar",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "Fischer-MTB mit 48-V-Mittelmotor (vermutlich Bafang), Modell und Baujahr nicht eindeutig; Widerspruch zwischen 'Neuwertig' und 'gebrauchtem Zustand'."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
