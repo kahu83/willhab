@@ -5303,5 +5303,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "927816767": {
+  "id": "927816767",
+  "erfasst": "2026-11-27 15:33",
+  "geprueft": "2026-11-27 15:33",
+  "title": "Flyer RS",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/flyer-rs-927816767/",
+  "price": 550.0,
+  "entfernung_km": 28.9,
+  "ort": "Alkoven",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": true,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Flyer",
+   "modell": "RS (Variante unklar, Fotos zeigen MTB-Rahmen)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": 650,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Verschmutzung, Gebrauchsspuren am Akkudeckel, laut Text defektes Motor-Zahnrad (nicht sichtbar)",
+   "sicherheit": "mittel",
+   "quelle": "Foto",
+   "notiz": "Die Fotos zeigen ein Flyer-Hardtail und keinen klassischen RS-Stadtrahmen, daher Modell, Motor und UVP ungeklärt; der Akku ist laut Verkäufer 650 Wh."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
