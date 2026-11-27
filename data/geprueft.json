@@ -5645,5 +5645,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1291758143": {
+  "id": "1291758143",
+  "erfasst": "2026-11-27 20:03",
+  "geprueft": "2026-11-27 20:03",
+  "title": "Prophete ebike",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/prophete-ebike-1291758143/",
+  "price": 530.0,
+  "entfernung_km": 26.9,
+  "ort": "Wels",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": true,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Prophete",
+   "modell": "unbekannt (20-Zoll-Faltrad, Modell nicht eindeutig erkennbar)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Akku defekt (lädt nicht laut Verkäufer), leichte Gebrauchsspuren und Verschmutzung auf Fotos",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "Prophete-Falt-E-Bike mit unbekanntem Modell und Motor; Modell, Akku-Kapazität und Laufleistung ohne Display-Foto oder Typenschild nicht bestimmbar, und der defekte Akku erfordert vor dem Kauf eine Prüfung."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
