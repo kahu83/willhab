@@ -5455,5 +5455,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1575775730": {
+  "id": "1575775730",
+  "erfasst": "2026-11-27 17:59",
+  "geprueft": "2026-11-27 17:59",
+  "title": "Fahrrad",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/fahrrad-1575775730/",
+  "price": 350.0,
+  "entfernung_km": 139.8,
+  "ort": "Graz",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Brera",
+   "modell": "Ciclovia (Damen-Citybike, 7-Gang Shimano Tourney, Gripshift)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "",
+   "sicherheit": "hoch",
+   "quelle": "Foto",
+   "notiz": "Kein Elektroantrieb erkennbar (kein Motor, Akku oder Display auf den Fotos, Beschreibung nennt mechanische Schaltung und V-Brakes), daher handelt es sich vermutlich um ein konventionelles Fahrrad und nicht um ein E-Bike."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
