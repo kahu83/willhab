@@ -446,6 +446,7 @@ def write_overview(wstate):
         f.write("\n".join(lines) + "\n")
     write_watchlist_html(wstate, ids)
     write_watchlist_xlsx(wstate, ids)
+    write_watchlist_json(wstate, ids)
 
 
 STATUS_STYLE = {"verfuegbar": ("verfügbar", "#1f6f54", "#e3f2ec"), "reserviert": ("reserviert", "#8a6100", "#fdf5dd"),
@@ -491,6 +492,7 @@ def run_thumbs():
     print("thumbs:", len(os.listdir(THUMBS)) if os.path.isdir(THUMBS) else 0)
     write_watchlist_html(st)
     write_watchlist_xlsx(st)
+    write_watchlist_json(st)
 
 
 
@@ -575,6 +577,13 @@ def write_watchlist_xlsx(wstate, ids=None):
 
     def day(v):
         d = parse_dt(v)
+        if not d and v:
+            try:
+                d = datetime.strptime(v[:16], "%Y-%m-%d %H:%M").replace(tzinfo=VIE)
+            except ValueError:
+                d = None
+        if d and d.year > datetime.now().year + 2:  # dealer ads: no real end date
+            d = None
         return d.astimezone(VIE).replace(tzinfo=None, hour=0, minute=0, second=0, microsecond=0) if d else None
 
     wb = Workbook(); ws = wb.active; ws.title = "Watchlist"
@@ -588,7 +597,7 @@ def write_watchlist_xlsx(wstate, ids=None):
     ws["B2"].font = Font(name="Arial", size=10, color=grey)
     head = ["Foto", "Artikel", "Preis", "Status", "Kategorie", "Restlaufzeit (Tage)", "Läuft ab", "Online seit",
             "Beobachtet seit", "km", "Änderungen"]
-    widths = [22, 46, 11, 14, 30, 12, 12, 12, 13, 9, 46]
+    widths = [22, 46, 11, 19, 30, 12, 12, 12, 13, 9, 46]
     H = 4
     for c, (t, w) in enumerate(zip(head, widths), 1):
         cell = ws.cell(H, c, t)
@@ -603,7 +612,7 @@ def write_watchlist_xlsx(wstate, ids=None):
         url = v.get("url") or f"https://www.willhaben.at/iad/object?adId={k}"
         title = (v.get("title") or "(nicht mehr abrufbar)").replace('"', "'")
         changes = [r_ for r_ in log.get(k, []) if r_.get("änderung") != "neu überwacht"]
-        vals = [f'=IMAGE("{RAW_THUMB.format(k)}")' if os.path.exists(os.path.join(THUMBS, f"{k}.jpg")) else "",
+        vals = [f'=_xlfn.IMAGE("{RAW_THUMB.format(k)}")' if os.path.exists(os.path.join(THUMBS, f"{k}.jpg")) else "",
                 f'=HYPERLINK("{url}","{title[:120]}")', v.get("price"), STATUS_STYLE.get(st, (st or "?",))[0],
                 v.get("kategorie") or "", f'=IF(G{r}="","",MAX(0,G{r}-TODAY()))', day(v.get("ablauf")),
                 day(v.get("online_seit")), day(v.get("since")), v.get("mileage") or None,
@@ -630,6 +639,38 @@ def write_watchlist_xlsx(wstate, ids=None):
     ws.auto_filter.ref = f"A{H}:K{H + len(items)}"
     ws.freeze_panes = f"C{H + 1}"
     wb.save(os.path.join(ROOT, "WATCHLIST.xlsx"))
+
+
+
+def write_watchlist_json(wstate, ids=None):
+    """Data for the sortable watchlist page (Artifact): data/watchlist_view.json."""
+    ids = ids or watchlist_ids()
+    log = _watch_log()
+    cutoff = (datetime.now(VIE) - timedelta(hours=24)).strftime("%Y-%m-%d %H:%M")
+
+    def iso(v):
+        d = parse_dt(v)
+        if not d and v:
+            try:
+                d = datetime.strptime(v[:16], "%Y-%m-%d %H:%M").replace(tzinfo=VIE)
+            except ValueError:
+                d = None
+        return d.astimezone(VIE).strftime("%Y-%m-%d") if d and d.year <= datetime.now().year + 2 else None
+    rows = []
+    for k in ids:
+        v = wstate.get(k)
+        if not v:
+            continue
+        ch = [c for c in log.get(k, []) if c.get("änderung") != "neu überwacht"]
+        rows.append({"id": k, "title": v.get("title") or "(nicht mehr abrufbar)",
+                     "url": v.get("url") or f"https://www.willhaben.at/iad/object?adId={k}",
+                     "price": v.get("price"), "status": v.get("status"), "kategorie": v.get("kategorie") or "",
+                     "ablauf": iso(v.get("ablauf")), "online": iso(v.get("online_seit")), "since": iso(v.get("since")),
+                     "km": v.get("mileage"), "thumb": os.path.exists(os.path.join(THUMBS, f"{k}.jpg")),
+                     "fresh": any(c.get("änderung") == "Status" and c.get("zeit", "") >= cutoff for c in ch),
+                     "changes": [{"zeit": c["zeit"], "art": c["änderung"], "alt": c["alt"], "neu": c["neu"]} for c in ch]})
+    with open(os.path.join(ROOT, "watchlist_view.json"), "w", encoding="utf-8") as f:
+        json.dump({"stand": now(), "items": rows}, f, ensure_ascii=False, separators=(",", ":"))
 
 
 
