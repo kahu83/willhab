@@ -5493,5 +5493,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1224105477": {
+  "id": "1224105477",
+  "erfasst": "2026-11-27 18:49",
+  "geprueft": "2026-11-27 18:49",
+  "title": "*NEU* Volta VB7 E-Fahrrad 26'",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/-neu-volta-vb7-e-fahrrad-26-1224105477/",
+  "price": 1095.0,
+  "entfernung_km": 78.8,
+  "ort": "Großgöttfritz",
+  "zustand": "Neu",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": 2022,
+  "jahr_quelle": "Foto/Spezifikation",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Volta",
+   "modell": "VB7 26\" E-Fahrrad (Lieferrad, 25 km/h)",
+   "modelljahr": 2022,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": 888,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Keine groben Schäden sichtbar; Reifen verschmutzt; Rad wirkt gebraucht trotz Neu-Angabe",
+   "sicherheit": "mittel",
+   "quelle": "Verkäufertext",
+   "notiz": "Inserat nennt Volta VB7 Baujahr 2022 mit 250W-Nabenmotor und 48V/18,5Ah, Fotos zeigen aber ein gebrauchtes, unverpacktes Rad in Lila, daher Zustand und Herkunft vor dem Kauf prüfen."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
