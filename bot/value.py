@@ -126,8 +126,9 @@ def drive_line(text):
 def brand_factor(text):
     t = text.lower()
     for f, names in BRAND_TIER.items():
-        if any(n in t for n in names):
-            return f, next(n for n in names if n in t)
+        for n in names:  # whole words only ("rose" must not match "Brose", "rex" not "Rexx...")
+            if re.search(r"(?<![a-zäöüß])" + re.escape(n) + r"(?![a-zäöüß])", t):
+                return f, n
     return 1.0, None
 
 
