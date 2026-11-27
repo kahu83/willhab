@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-26 18:11
+Stand: 2026-11-27 02:00
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -37,7 +37,7 @@ Stand: 2026-11-26 18:11
 | [1285263358](fahrraeder/1285263358.md) |  | ? | ? | geloescht | – | – |  |
 | [1220867798](fahrraeder/1220867798.md) | Warmwasser Wärmepumpe Dimplex BWP300LW | 49 € | ? | verfuegbar | 09.11.2026 | 24.12.2026 | Heizung / Öfen / Klima › Boiler |
 | [1141209021](fahrraeder/1141209021.md) | Edelstahlwindkessel 160l | 300 € | ? | verfuegbar | 24.10.2026 | 08.12.2026 | Heizung / Öfen / Klima › Boiler |
-| [903720229](fahrraeder/903720229.md) | Warmwasserwärmepumpe | 300 € | ? | verfuegbar | 31.10.2026 | 15.12.2026 | Heizung / Öfen / Klima › Heizgeräte / -kessel |
+| [903720229](fahrraeder/903720229.md) | Warmwasserwärmepumpe | 200 € | ? | verfuegbar | 31.10.2026 | 15.12.2026 | Heizung / Öfen / Klima › Heizgeräte / -kessel |
 | [2005448648](fahrraeder/2005448648.md) | Verkaufe beide meiner TRP Scheibenbremsen | 100 € | ? | verfuegbar | 17.10.2026 | 01.12.2026 | Fahrrad Ersatzteile / Zubehör › Bremsen |
 | [2043930230](fahrraeder/2043930230.md) | Bosch Performance Cx Race Smart System | 430 € | ? | verfuegbar | 25.10.2026 | 09.12.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
 | [1362936925](fahrraeder/1362936925.md) |  | ? | ? | geloescht | – | – |  |
