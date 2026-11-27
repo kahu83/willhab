@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-27 02:00
+Stand: 2026-11-27 06:12
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -74,9 +74,9 @@ Stand: 2026-11-27 02:00
 | [1884412009](fahrraeder/1884412009.md) | Specialized Woman's Turbo Levo Short Travel FSR CE | 1.100 € | ? | verfuegbar | 25.10.2026 | 09.12.2026 | Fahrräder › E-Bikes |
 | [993291035](fahrraeder/993291035.md) | KTM Macina Kapoho 7973 - 750 Wh | Jahresservice ne | 1.890 € | 5100 km | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrräder › E-Bikes |
 | [1594663858](fahrraeder/1594663858.md) | E Bike Batterie, Akku, Bosch Power Tube 625 | 210 € | ? | verfuegbar | 15.10.2026 | 29.11.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
-| [1512313825](fahrraeder/1512313825.md) | Continental Mtb Reifen Xynotal | 25 € | ? | verfuegbar | 12.10.2026 | 26.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [1512313825](fahrraeder/1512313825.md) | Continental Mtb Reifen Xynotal | 25 € | ? | geloescht | 12.10.2026 | 26.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
 | [1993844725](fahrraeder/1993844725.md) | Neu Husqvarna BLi10 Akku, 2100 mAh, 36 V, wiederau | 60 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Rasen- / Wiesenmäher › Rasenmähroboter |
-| [1026015672](fahrraeder/1026015672.md) | Specialized Laufradsatz 29 Boost | 140 € | ? | verfuegbar | 12.10.2026 | 26.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [1026015672](fahrraeder/1026015672.md) | Specialized Laufradsatz 29 Boost | 140 € | ? | geloescht | 12.10.2026 | 26.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
 | [1595605679](fahrraeder/1595605679.md) | Schwimmender Delfin aus Aruba wasserfest Outdoor D | 40 € | ? | verfuegbar | 23.10.2026 | 07.12.2026 | Gartenmöbel / Griller / Dekoration › Gartendekoration |
 | [1735054921](fahrraeder/1735054921.md) | Electrolux Klimaanlage Wärmepumpe Innen-und Außeng | 380 € | ? | verfuegbar | 04.11.2026 | 19.12.2026 | Klimageräte / Ventilatoren › Klimageräte |
 | [1724294682](fahrraeder/1724294682.md) | Klimagerät | 90 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Klimageräte / Ventilatoren › Klimageräte |
@@ -94,7 +94,7 @@ Stand: 2026-11-27 02:00
 | [1035676202](fahrraeder/1035676202.md) | Fahrrad Halterung | 15 € | ? | verfuegbar | 25.10.2026 | 09.12.2026 | Fahrrad Ersatzteile / Zubehör › Aufbewahrung |
 | [1390679874](fahrraeder/1390679874.md) | E Bike | 1.900 € | 4242 km | verfuegbar | 07.11.2026 | 22.12.2026 | Fahrräder › E-Bikes |
 | [1281355307](fahrraeder/1281355307.md) | Fox 36 Rhythm 160mm | 160 € | ? | verfuegbar | 20.10.2026 | 04.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
-| [792153108](fahrraeder/792153108.md) | Federgabel RockShox Lyrik Ultimate 29er, 180 mm En | 180 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [792153108](fahrraeder/792153108.md) | (verkauft) Federgabel RockShox Lyrik Ultimate 29er | 180 € | ? | verkauft | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1446084012](fahrraeder/1446084012.md) | FOX 36 AWL HD Sport 29" 160mm RAIL 2.0 Federgabel | 189 € | ? | verfuegbar | 12.11.2026 | 27.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [785575936](fahrraeder/785575936.md) | Kassette Shimano DEORE XT CS-M8000 11S (11:46T) | 40 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
 | [2049609737](fahrraeder/2049609737.md) | Dt Swiss Nabe 15x110 | 35 € | ? | geloescht | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
