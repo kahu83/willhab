@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-27 15:35
+Stand: 2026-11-27 18:13
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -61,7 +61,7 @@ Stand: 2026-11-27 15:35
 | [1174080062](fahrraeder/1174080062.md) | Wärmepumpe für Schwimmbad | 50 € | ? | verfuegbar | 02.11.2026 | 17.12.2026 | Pools / Biotope › Heizungen |
 | [1022737853](fahrraeder/1022737853.md) |  | ? | ? | geloescht | – | – |  |
 | [1682701657](fahrraeder/1682701657.md) | Fox 36 Rhythm 160mm 29 Zoll | 89 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
-| [1553002343](fahrraeder/1553002343.md) | (verkauft) Cane Creek Helm Mk2 Air 29" Boost 160mm | 222 € | ? | verkauft | 25.10.2026 | 09.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
+| [1553002343](fahrraeder/1553002343.md) | (verkauft) Cane Creek Helm Mk2 Air 29" Boost 160mm | 222 € | ? | geloescht | 25.10.2026 | 09.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1544143603](fahrraeder/1544143603.md) | Race Face Getta Grip Fahrrad Griffe | 10 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1272049794](fahrraeder/1272049794.md) | Griffe RACEFACE Getta Grip 33 schwarz/ kashmoney 1 | 18 € | ? | verfuegbar | 18.10.2026 | 02.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1971233514](fahrraeder/1971233514.md) | Fahrrad Lenkergriff | 10 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
