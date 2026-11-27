@@ -445,6 +445,7 @@ def write_overview(wstate):
     with open(os.path.join(ROOT, "WATCHLIST.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
     write_watchlist_html(wstate, ids)
+    write_watchlist_xlsx(wstate, ids)
 
 
 STATUS_STYLE = {"verfuegbar": ("verfügbar", "#1f6f54", "#e3f2ec"), "reserviert": ("reserviert", "#8a6100", "#fdf5dd"),
@@ -489,6 +490,7 @@ def run_thumbs():
             time.sleep(0.5)
     print("thumbs:", len(os.listdir(THUMBS)) if os.path.isdir(THUMBS) else 0)
     write_watchlist_html(st)
+    write_watchlist_xlsx(st)
 
 
 
@@ -550,6 +552,85 @@ def write_watchlist_html(wstate, ids=None):
     out.append("</body></html>")
     with open(os.path.join(ROOT, "WATCHLIST.html"), "w", encoding="utf-8") as f:
         f.write("\n".join(out).encode("ascii", "xmlcharrefreplace").decode())  # entities: Google Docs import breaks raw emoji
+
+
+RAW_THUMB = "https://raw.githubusercontent.com/kahu83/willhab/main/data/thumbs/{}.jpg"
+
+
+def write_watchlist_xlsx(wstate, ids=None):
+    """Sortable watchlist table in document style -> data/WATCHLIST.xlsx (becomes a Google Sheet in Drive).
+    Photos via IMAGE() from the public repo, status changes as lines in the last column (rows stay sortable)."""
+    try:
+        from openpyxl import Workbook
+        from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+    except ImportError:
+        print("openpyxl fehlt - keine WATCHLIST.xlsx"); return
+    ids = ids or watchlist_ids()
+    log = _watch_log()
+    rank = {"verfuegbar": 0, "reserviert": 1, "verkauft": 2, "geloescht": 3}
+    cutoff = (datetime.now(VIE) - timedelta(hours=24)).strftime("%Y-%m-%d %H:%M")
+    fresh = {k for k, rows in log.items() if any(r.get("änderung") == "Status" and r.get("zeit", "") >= cutoff for r in rows)}
+    items = [(k, wstate[k]) for k in ids if k in wstate]
+    items.sort(key=lambda kv: (0 if kv[0] in fresh else 1, rank.get(kv[1].get("status"), 4), kv[1].get("ablauf") or "9999"))
+
+    def day(v):
+        d = parse_dt(v)
+        return d.astimezone(VIE).replace(tzinfo=None, hour=0, minute=0, second=0, microsecond=0) if d else None
+
+    wb = Workbook(); ws = wb.active; ws.title = "Watchlist"
+    ws.sheet_view.showGridLines = False
+    green, grey, line = "1F6F54", "5F6A63", Side(style="thin", color="DDE1DC")
+    ws["B1"] = "Meine willhaben-Watchlist"; ws["B1"].font = Font(name="Arial", size=20, bold=True, color=green)
+    n = {s: sum(1 for _, v in items if v.get("status") == s) for s in rank}
+    ws["B2"] = (f"Stand {now()} · {len(items)} Anzeigen · {n['verfuegbar']} verfügbar · {n['reserviert']} reserviert · "
+                f"{n['verkauft']} verkauft · {n['geloescht']} offline · gelb = Status in den letzten 24 h geändert · "
+                "Sortieren: Pfeil im Spaltenkopf")
+    ws["B2"].font = Font(name="Arial", size=10, color=grey)
+    head = ["Foto", "Artikel", "Preis", "Status", "Kategorie", "Restlaufzeit (Tage)", "Läuft ab", "Online seit",
+            "Beobachtet seit", "km", "Änderungen"]
+    widths = [22, 46, 11, 14, 30, 12, 12, 12, 13, 9, 46]
+    H = 4
+    for c, (t, w) in enumerate(zip(head, widths), 1):
+        cell = ws.cell(H, c, t)
+        cell.font = Font(name="Arial", size=10, bold=True, color="FFFFFF")
+        cell.fill = PatternFill("solid", fgColor=green)
+        cell.alignment = Alignment(vertical="center", horizontal="center", wrap_text=True)
+        ws.column_dimensions[chr(64 + c)].width = w
+    ws.row_dimensions[H].height = 30
+    for i, (k, v) in enumerate(items):
+        r = H + 1 + i
+        st = v.get("status")
+        url = v.get("url") or f"https://www.willhaben.at/iad/object?adId={k}"
+        title = (v.get("title") or "(nicht mehr abrufbar)").replace('"', "'")
+        changes = [r_ for r_ in log.get(k, []) if r_.get("änderung") != "neu überwacht"]
+        vals = [f'=IMAGE("{RAW_THUMB.format(k)}")' if os.path.exists(os.path.join(THUMBS, f"{k}.jpg")) else "",
+                f'=HYPERLINK("{url}","{title[:120]}")', v.get("price"), STATUS_STYLE.get(st, (st or "?",))[0],
+                v.get("kategorie") or "", f'=IF(G{r}="","",MAX(0,G{r}-TODAY()))', day(v.get("ablauf")),
+                day(v.get("online_seit")), day(v.get("since")), v.get("mileage") or None,
+                "\n".join(f"↳ {c['zeit'][5:16]}: {c['änderung']} {c['alt']} → {c['neu']}" for c in changes)]
+        fill = PatternFill("solid", fgColor="FFF4C2") if k in fresh else None
+        for c, val_ in enumerate(vals, 1):
+            cell = ws.cell(r, c, val_)
+            cell.font = Font(name="Arial", size=10, color=grey if st in ("verkauft", "geloescht") else "1D2420",
+                             bold=c == 2, underline="single" if c == 2 else None)
+            cell.alignment = Alignment(vertical="center", wrap_text=c in (2, 5, 11), horizontal="center" if c in (4, 6, 7, 8, 9, 10) else None)
+            cell.border = Border(bottom=line)
+            if fill:
+                cell.fill = fill
+        ws.cell(r, 3).number_format = '#,##0 "€"'
+        for c in (7, 8, 9):
+            ws.cell(r, c).number_format = "DD.MM.YYYY"
+        ws.cell(r, 10).number_format = "#,##0"
+        sty = STATUS_STYLE.get(st)
+        if sty:
+            ws.cell(r, 4).font = Font(name="Arial", size=10, bold=True, color=sty[1][1:])
+            if not fill:
+                ws.cell(r, 4).fill = PatternFill("solid", fgColor=sty[2][1:])
+        ws.row_dimensions[r].height = 80
+    ws.auto_filter.ref = f"A{H}:K{H + len(items)}"
+    ws.freeze_panes = f"C{H + 1}"
+    wb.save(os.path.join(ROOT, "WATCHLIST.xlsx"))
+
 
 
 def run_visiontest():

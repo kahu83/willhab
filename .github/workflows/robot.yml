@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Pakete
-        run: pip install --quiet "anthropic>=2.14,<3" pillow
+        run: pip install --quiet "anthropic>=2.14,<3" pillow openpyxl
       - name: Welcher Job?
         id: pick
         run: |
