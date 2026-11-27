@@ -386,6 +386,7 @@ def _watch_loop(ids, wstate, deadline, fails):
                "checked": now(),
                "image": ((d.get("images") or [None])[0]) or (wstate.get(ad_id) or {}).get("image", ""),
                "since": (wstate.get(ad_id) or {}).get("since") or now()}
+        ensure_thumb(ad_id, cur["image"])
         old = wstate.get(ad_id)
         changes = []
         if old is None:
@@ -450,6 +451,47 @@ STATUS_STYLE = {"verfuegbar": ("verfügbar", "#1f6f54", "#e3f2ec"), "reserviert"
                 "verkauft": ("verkauft", "#9b2c2c", "#fde8e8"), "geloescht": ("offline / abgelaufen", "#5f6a63", "#eceeed")}
 
 
+THUMBS = os.path.join(ROOT, "thumbs")
+
+
+def ensure_thumb(ad_id, img_url):
+    """Small JPEG of the ad photo (160x120), stored in data/thumbs/ so the Drive doc can embed it
+    (Google Docs cannot load willhaben image links itself)."""
+    path = os.path.join(THUMBS, f"{ad_id}.jpg")
+    if not img_url or os.path.exists(path):
+        return
+    try:
+        from io import BytesIO
+        from PIL import Image, ImageOps
+        req = urllib.request.Request(img_url, headers={"User-Agent": wh.UA, "Referer": "https://www.willhaben.at/"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            im = Image.open(BytesIO(r.read())).convert("RGB")
+        os.makedirs(THUMBS, exist_ok=True)
+        ImageOps.fit(im, (320, 240)).save(path, "JPEG", quality=70, optimize=True)
+    except Exception as e:
+        print("thumb", ad_id, e)
+
+
+def _thumb_src(ad_id):
+    path = os.path.join(THUMBS, f"{ad_id}.jpg")
+    if not os.path.exists(path):
+        return None
+    import base64
+    return "data:image/jpeg;base64," + base64.b64encode(open(path, "rb").read()).decode()
+
+
+def run_thumbs():
+    """Fill missing thumbnails for all watched ads, then rebuild the watchlist page."""
+    st = load(os.path.join(ROOT, ".watch_state.json"), {})
+    for k, v in st.items():
+        if v.get("image") and not os.path.exists(os.path.join(THUMBS, f"{k}.jpg")):
+            ensure_thumb(k, v["image"])
+            time.sleep(0.5)
+    print("thumbs:", len(os.listdir(THUMBS)) if os.path.isdir(THUMBS) else 0)
+    write_watchlist_html(st)
+
+
+
 def _watch_log():
     path = os.path.join(ROOT, "watchlist_log.csv")
     out = {}
@@ -485,8 +527,8 @@ def write_watchlist_html(wstate, ids=None):
     for k, v in items:
         lab, fg, bg = STATUS_STYLE.get(v.get("status"), (v.get("status") or "?", "#333", "#eee"))
         url = v.get("url") or f"https://www.willhaben.at/iad/object?adId={k}"
-        img = (f"<a href='{h(url)}'><img src='{h(v['image'])}' width='160' height='120' "
-               f"style='object-fit:cover;border-radius:8px'></a>") if v.get("image") else "<i>kein Foto</i>"
+        src = _thumb_src(k)
+        img = (f"<a href='{h(url)}'><img src='{src}' width='160' height='120'></a>") if src else "<i>kein Foto</i>"
         changes = [r for r in log.get(k, []) if r.get("änderung") != "neu überwacht"]
         hist = "".join(f"<tr><td></td><td style='color:#c2410c;font-size:13px'>↳ {h(r['zeit'])}: "
                        f"<b>{h(r['änderung'])}</b> {h(r['alt'])} → {h(r['neu'])}</td></tr>" for r in changes)
@@ -616,6 +658,6 @@ def run_odo():
 if __name__ == "__main__":
     os.makedirs(ROOT, exist_ok=True)
     cmd = sys.argv[1] if len(sys.argv) > 1 else "search"
-    {"search": run_search, "watch": run_watch, "visiontest": run_visiontest, "batch": run_batch, "odo": run_odo,
+    {"search": run_search, "watch": run_watch, "visiontest": run_visiontest, "batch": run_batch, "odo": run_odo, "thumbs": run_thumbs,
      "ping": lambda: push("Willhaben-Roboter 🚲", "Test: Hier kommen deine Schnäppchen-Alarme (≥45% unter Wert) an!",
                           tags="tada")}[cmd]()
