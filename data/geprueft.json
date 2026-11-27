@@ -5379,5 +5379,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1855120283": {
+  "id": "1855120283",
+  "erfasst": "2026-11-27 17:04",
+  "geprueft": "2026-11-27 17:04",
+  "title": "Unisex BMW E-Bike zu verkaufen",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/unisex-bmw-e-bike-zu-verkaufen-1855120283/",
+  "price": 490.0,
+  "entfernung_km": 138.7,
+  "ort": "Baden",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "BMW",
+   "modell": "unbekannt",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Laut Verkäufer möglicherweise reparaturbedürftig, Art des Schadens unbekannt",
+   "sicherheit": "niedrig",
+   "quelle": "Verkäufertext",
+   "notiz": "Keine Fotos übermittelt, daher ist weder Modell noch Antrieb identifizierbar; Marke stammt nur aus der Verkäuferangabe."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": false
  }
 }
