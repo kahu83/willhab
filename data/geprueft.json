@@ -5683,5 +5683,30 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1222103083": {
+  "id": "1222103083",
+  "erfasst": "2026-11-27 20:21",
+  "geprueft": "2026-11-27 20:21",
+  "title": "E-Bike 27,5 Zoll Hinterradmotor",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-27-5-zoll-hinterradmotor-1222103083/",
+  "price": 520.0,
+  "entfernung_km": 49.0,
+  "ort": "Attnang-Puchheim",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar (anderer Motor im Text)",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": null,
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
