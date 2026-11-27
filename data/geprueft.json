@@ -5341,5 +5341,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1389620842": {
+  "id": "1389620842",
+  "erfasst": "2026-11-27 16:55",
+  "geprueft": "2026-11-27 16:55",
+  "title": "Puchfahrrad",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/puchfahrrad-1389620842/",
+  "price": 111.0,
+  "entfernung_km": 19.2,
+  "ort": "Losenstein",
+  "zustand": "Defekt",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": true,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Puch",
+   "modell": "unbekannt (Puch-Fahrrad, vermutlich älteres Alltagsrad, Modell nicht erkennbar)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Rost an Rahmen, Gabel, Felgen und Kette; abgeplatzter Lack; Riss im Ledersattel; abgefahrene Reifen; Defekt laut Verkäufer",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "Kein E-Bike, sondern ein altes Puch-Fahrrad ohne Motor oder Akku; Bremsen und Lager sind ungeprüft."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
