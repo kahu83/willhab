@@ -5708,5 +5708,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "861433302": {
+  "id": "861433302",
+  "erfasst": "2026-11-27 20:39",
+  "geprueft": "2026-11-27 20:39",
+  "title": "CUBE Kathmandu Pro grey´n´lunar 2025 - RH 54 cm - Top gepflegt",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/cube-kathmandu-pro-greynlunar-2025-rh-54-cm-top-gepflegt-861433302/",
+  "price": 785.0,
+  "entfernung_km": 140.5,
+  "ort": "Graz",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-27",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": 2025,
+  "jahr_quelle": "Foto/Spezifikation",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "CUBE",
+   "modell": "Kathmandu Pro (grey´n´lunar, RH 54 cm; vermutlich ohne Motor, Hybrid-Variante nicht bestätigt)",
+   "modelljahr": 2025,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "keine sichtbaren Schäden",
+   "sicherheit": "mittel",
+   "quelle": "Verkäufertext",
+   "notiz": "Anzeige nennt Kathmandu Pro ohne Hybrid-Zusatz, Fotos zeigen keinen Motor oder Akku, daher vermutlich ein Nicht-E-Bike; Typ beim Verkäufer klären."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
