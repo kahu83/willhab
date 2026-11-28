@@ -7589,5 +7589,30 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "918504074": {
+  "id": "918504074",
+  "erfasst": "2026-11-28 16:17",
+  "geprueft": "2026-11-28 16:17",
+  "title": "Movena E Bike",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/movena-e-bike-918504074/",
+  "price": 800.0,
+  "entfernung_km": 107.7,
+  "ort": "Bürmoos",
+  "zustand": "Neuwertig",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar (anderer Motor im Text)",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": null,
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
