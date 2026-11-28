@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-28 06:48
+Stand: 2026-11-28 12:16
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -24,7 +24,7 @@ Stand: 2026-11-28 06:48
 | [1956516279](fahrraeder/1956516279.md) | Neue Lifepo4 16,3kWh 52V LiFePO4 - Batterie - inkl | 1.550 € | ? | verfuegbar | 01.10.2026 | 30.11.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1942696663](fahrraeder/1942696663.md) | Victron SmartSolar MPPT 250/100-Tr VE. Can - NEU / | 450 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1212347001](fahrraeder/1212347001.md) | Adapterwinkel M10 | 2 € | ? | verfuegbar | 15.11.2026 | 30.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
-| [1083134844](fahrraeder/1083134844.md) | Wechselrichter und 70 Stk PV-Module | 1.400 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
+| [1083134844](fahrraeder/1083134844.md) | Wechselrichter und 70 Stk PV-Module | 1.400 € | ? | geloescht | 13.10.2026 | 27.11.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [848646332](fahrraeder/848646332.md) | PV Speicher Taico LiFePO4 20,48kWh Batterie Module | 2.500 € | ? | verfuegbar | 08.11.2026 | 23.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1114186968](fahrraeder/1114186968.md) | BYD Lithium Battery 2,5kWh | 80 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
 | [1109403283](fahrraeder/1109403283.md) | Photovoltaik Module | 5 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Haus / Bauen › Photovoltaik / Solar / Erneuerbare Energien |
