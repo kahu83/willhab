@@ -7677,5 +7677,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1578727942": {
+  "id": "1578727942",
+  "erfasst": "2026-11-28 18:21",
+  "geprueft": "2026-11-28 18:21",
+  "title": "E-Bike",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-1578727942/",
+  "price": 175.0,
+  "entfernung_km": 140.5,
+  "ort": "Graz",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "unbekannt",
+   "modell": "unbekannt",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Rost laut Verkäufer, verschmutzter und schwergängiger Antrieb, Motor vermutlich blockiert oder defekt",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "Marke und Modell sind auf den Fotos nicht erkennbar; das Rad wirkt als generisches E-Bike mit Griffgas, dessen Antrieb laut Verkäufer nur etwa 4 km/h schafft."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
