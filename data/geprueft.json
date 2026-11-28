@@ -7450,5 +7450,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1590757601": {
+  "id": "1590757601",
+  "erfasst": "2026-11-28 14:47",
+  "geprueft": "2026-11-28 14:47",
+  "title": "Elektrisches Faltbike Sharp BK-BD03-EBL Fabriksneu Originalverpackt",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/elektrisches-faltbike-sharp-bk-bd03-ebl-fabriksneu-originalverpackt-1590757601/",
+  "price": 999.0,
+  "entfernung_km": 148.5,
+  "ort": "Gleisdorf",
+  "zustand": "Neu",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Motor laut Foto/Spezifikation: Bafang",
+  "defekt": false,
+  "jahr": 2025,
+  "jahr_quelle": "Foto/Spezifikation",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Sharp",
+   "modell": "BK-BD03-EBL (Faltbares E-Bike, 20 Zoll, 7-Gang, blau)",
+   "modelljahr": 2025,
+   "motor_hersteller": "Bafang",
+   "bosch_linie": null,
+   "akku_wh": 374,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Karton mit leichten Gebrauchsspuren, Rad verpackt nicht prüfbar",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "Neuware in Originalverpackung; Herstellerangaben nennen Bafang-Heckmotor 250 W und 374,4 Wh Akku, UVP nicht belegt, da die gefundene Angabe zu einer anderen Variante gehört."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
