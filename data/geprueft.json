@@ -5974,5 +5974,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1501235096": {
+  "id": "1501235096",
+  "erfasst": "2026-11-28 02:16",
+  "geprueft": "2026-11-28 02:16",
+  "title": "E-Bike",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-1501235096/",
+  "price": 500.0,
+  "entfernung_km": 22.9,
+  "ort": "Linz",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-21",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Modelljahr unbekannt",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Cannondale",
+   "modell": "Trail Neo (Variante 3 oder 4, nicht eindeutig)",
+   "modelljahr": null,
+   "motor_hersteller": "Bosch",
+   "bosch_linie": "Performance Line",
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "keine klar erkennbaren Schäden, leichte Verschmutzung",
+   "sicherheit": "mittel",
+   "quelle": "Foto",
+   "notiz": "Cannondale Trail Neo mit Bosch-Mittelmotor; Variante, Akkukapazität, Modelljahr und Kilometerstand sind ohne Display- oder Typenschild-Foto nicht verifizierbar."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
