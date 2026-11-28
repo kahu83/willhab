@@ -6202,5 +6202,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1387505390": {
+  "id": "1387505390",
+  "erfasst": "2026-11-28 08:17",
+  "geprueft": "2026-11-28 08:17",
+  "title": "Klapp E-bike von Lobbe, kaum verwendet",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/klapp-e-bike-von-lobbe-kaum-verwendet-1387505390/",
+  "price": 99.0,
+  "entfernung_km": 149.9,
+  "ort": "Wien",
+  "zustand": "Defekt",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Motor laut Foto/Spezifikation: Bafang",
+  "defekt": true,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Llobe",
+   "modell": "Falt E-Bike 20\" Plexa (vermutlich)",
+   "modelljahr": null,
+   "motor_hersteller": "Bafang",
+   "bosch_linie": null,
+   "akku_wh": 281,
+   "uvp_eur": null,
+   "laufleistung_km": 300,
+   "schaeden": "Schläuche laut Verkäufer platt, Display nicht montiert; auf Fotos keine eindeutigen Schäden erkennbar",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "Modell per Fotoabgleich vermutet (schwarz, 20 Zoll, fest verbauter Akku); Llobe ist die korrekte Schreibweise, UVP nicht belegt und Kilometerstand nur als Verkäuferangabe (max. 300 km) vorhanden."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
