@@ -7652,5 +7652,30 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1572418619": {
+  "id": "1572418619",
+  "erfasst": "2026-11-28 17:21",
+  "geprueft": "2026-11-28 17:21",
+  "title": "Cyrusher Nitro 48v 1000w Mittelmotor",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/cyrusher-nitro-48v-1000w-mittelmotor-1572418619/",
+  "price": 550.0,
+  "entfernung_km": 148.0,
+  "ort": "Klosterneuburg",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar (anderer Motor im Text)",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": null,
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
