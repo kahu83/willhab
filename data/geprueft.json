@@ -5936,5 +5936,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "2036901137": {
+  "id": "2036901137",
+  "erfasst": "2026-11-28 01:03",
+  "geprueft": "2026-11-28 01:03",
+  "title": "E - City - Bike",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-city-bike-2036901137/",
+  "price": 990.0,
+  "entfernung_km": 94.0,
+  "ort": "St. Pölten",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Felt (Umbau)",
+   "modell": "Felt Beach Cruiser, E-Bike-Umbau (Modell/Variante unbekannt)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": 89,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "keine eindeutigen Schäden sichtbar; Elektrik-Umbau nicht nachvollziehbar",
+   "sicherheit": "niedrig",
+   "quelle": "Verkäufertext",
+   "notiz": "Eigenumbau mit Verkäuferangabe Bafang 500 W und 12 V 7,4 Ah (~89 Wh), was nicht zusammenpasst; Motor, Akku und Display auf Fotos nicht verifizierbar."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
