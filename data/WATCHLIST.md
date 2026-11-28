@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-28 12:33
+Stand: 2026-11-28 14:51
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -14,7 +14,7 @@ Stand: 2026-11-28 12:33
 | [950132080](fahrraeder/950132080.md) | BLACK FRIDAY WEEKS - bis zu -40% Swingbell Pro20 - | 119 € | ? | verfuegbar | 10.11.2026 | – | Fitnessgeräte › Hantel / Gewichte |
 | [1851677936](fahrraeder/1851677936.md) | Kettlebell 12 kg gummiert | 30 € | ? | verfuegbar | 22.11.2026 | 06.01.2027 | Fitnessgeräte › Hantel / Gewichte |
 | [2018317430](fahrraeder/2018317430.md) | Kettlebell Kugelhantel verstellbar bis 5 kg NEU | 15 € | ? | verfuegbar | 23.10.2026 | 07.12.2026 | Fitnessgeräte › Hantel / Gewichte |
-| [845413132](fahrraeder/845413132.md) | Kuggelhantel | 10 € | ? | verfuegbar | 22.11.2026 | 06.01.2027 | Fitnessgeräte › Hantel / Gewichte |
+| [845413132](fahrraeder/845413132.md) | (verkauft) Kuggelhantel | 10 € | ? | verkauft | 22.11.2026 | 06.01.2027 | Fitnessgeräte › Hantel / Gewichte |
 | [1234820432](fahrraeder/1234820432.md) | Verstellbare Kettlebell | 50 € | ? | verfuegbar | 18.11.2026 | 02.01.2027 | Fitnessgeräte › Hantel / Gewichte |
 | [1579063708](fahrraeder/1579063708.md) | Mono-Split-Klimagerät_Lagerabverkauf AUX-C-Smart S | 599 € | ? | verfuegbar | 15.12.2025 | – | Klimageräte / Ventilatoren › Klimageräte |
 | [856901017](fahrraeder/856901017.md) | HEIKO Split Klimaanlage Aktion ! | 400 € | ? | verfuegbar | 11.10.2026 | 10.12.2026 | Klimageräte / Ventilatoren › Klimageräte |
