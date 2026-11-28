@@ -6579,5 +6579,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1808120746": {
+  "id": "1808120746",
+  "erfasst": "2026-11-28 10:08",
+  "geprueft": "2026-11-28 10:08",
+  "title": "Elektro Drive Smart",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/elektro-drive-smart-1808120746/",
+  "price": 250.0,
+  "entfernung_km": 23.8,
+  "ort": "Molln",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Sticker (Stricker) Hand-Bikes",
+   "modell": "ElectroDrive SMART (Tetra/Para, Ausstattung unbekannt)",
+   "modelljahr": null,
+   "motor_hersteller": "andere",
+   "bosch_linie": null,
+   "akku_wh": 418,
+   "uvp_eur": 6500,
+   "laufleistung_km": null,
+   "schaeden": "Kabel lose, verschmutzt, unvollständig/zerlegt, Funktion ungeprüft",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "Handbike-Modell per Handbuch-Foto erkannt; Akkutyp und Laufleistung nicht belegt, UVP stammt aus einem Inserat und nicht vom Hersteller."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
