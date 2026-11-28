@@ -7412,5 +7412,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1555267826": {
+  "id": "1555267826",
+  "erfasst": "2026-11-28 14:37",
+  "geprueft": "2026-11-28 14:37",
+  "title": "Mokwheel",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/mokwheel-1555267826/",
+  "price": 1180.0,
+  "entfernung_km": 148.6,
+  "ort": "Wien",
+  "zustand": "Neuwertig",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Motor laut Foto/Spezifikation: andere",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Mokwheel",
+   "modell": "Basalt ST 2.0 (wahrscheinlich, Farbe Orange weicht ab)",
+   "modelljahr": null,
+   "motor_hersteller": "andere",
+   "bosch_linie": null,
+   "akku_wh": 940,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "keine sichtbaren Schäden auf den Fotos",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "Die Herstellerangaben zum Basalt ST 2.0 passen weitgehend zum Inserat, Modell, Farbe und Kilometerstand sind aber nicht eindeutig belegt."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
