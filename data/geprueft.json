@@ -6050,5 +6050,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1649178196": {
+  "id": "1649178196",
+  "erfasst": "2026-11-28 06:40",
+  "geprueft": "2026-11-28 06:40",
+  "title": "E Bike Damen 28\"",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-damen-28-1649178196/",
+  "price": 1000.0,
+  "entfernung_km": 34.5,
+  "ort": "Klam",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Motor laut Foto/Spezifikation: Yamaha",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Raymon",
+   "modell": "TourRay E (Variante unklar, vermutlich Damen Sport 27,5\")",
+   "modelljahr": null,
+   "motor_hersteller": "Yamaha",
+   "bosch_linie": null,
+   "akku_wh": 500,
+   "uvp_eur": null,
+   "laufleistung_km": 1500,
+   "schaeden": "leichte Gebrauchsspuren an Rahmen und Griffen, keine gravierenden Schäden erkennbar",
+   "sicherheit": "mittel",
+   "quelle": "Verkäufertext",
+   "notiz": "Motor vermutlich Yamaha (nicht eindeutig am Foto belegt), Modelljahr und Variante ohne Rahmennummer oder Display-Foto nicht bestimmbar; Laufleistung 1500 km nur als 'ca.' aus dem Text übernommen."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }

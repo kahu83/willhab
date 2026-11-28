@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-28 06:10
+Stand: 2026-11-28 06:48
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -98,7 +98,7 @@ Stand: 2026-11-28 06:10
 | [1446084012](fahrraeder/1446084012.md) | FOX 36 AWL HD Sport 29" 160mm RAIL 2.0 Federgabel | 189 € | ? | verfuegbar | 12.11.2026 | 27.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [785575936](fahrraeder/785575936.md) | Kassette Shimano DEORE XT CS-M8000 11S (11:46T) | 40 € | ? | verfuegbar | 21.10.2026 | 05.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
 | [2049609737](fahrraeder/2049609737.md) | Dt Swiss Nabe 15x110 | 35 € | ? | geloescht | 11.10.2026 | 25.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
-| [1015599562](fahrraeder/1015599562.md) | e*thirteen (by The Hive) MTB Hinterradnabe - Boost | 40 € | ? | verfuegbar | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
+| [1015599562](fahrraeder/1015599562.md) | e*thirteen (by The Hive) MTB Hinterradnabe - Boost | 40 € | ? | geloescht | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › Reifen / Felgen / Schläuche |
 | [1123260343](fahrraeder/1123260343.md) | Evoc Protektor vest | 45 € | ? | verfuegbar | 19.10.2026 | 03.12.2026 | Fahrradbekleidung › Fahrrad Protektoren |
 | [881889432](fahrraeder/881889432.md) |  | ? | ? | geloescht | – | – |  |
 | [1360694329](fahrraeder/1360694329.md) | (reserviert) Protektorenhose Wedze Größe L | 10 € | ? | reserviert | 14.11.2026 | 29.12.2026 | Fahrradbekleidung › Fahrrad Protektoren |
