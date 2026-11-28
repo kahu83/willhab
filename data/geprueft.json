@@ -7146,5 +7146,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1798752333": {
+  "id": "1798752333",
+  "erfasst": "2026-11-28 13:14",
+  "geprueft": "2026-11-28 13:14",
+  "title": "Motorfahrrad Garelli Mosquito",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/motorfahrrad-garelli-mosquito-1798752333/",
+  "price": 750.0,
+  "entfernung_km": 50.5,
+  "ort": "Wolfpassing",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": 1969,
+  "jahr_quelle": "Foto/Spezifikation",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Garelli",
+   "modell": "Mosquito (Hilfsmotor, Rahmenplakette Chiorda-Sud Typ 6930)",
+   "modelljahr": 1969,
+   "motor_hersteller": "andere",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Lack abgeplatzt/verkratzt am Rahmen, Motor verschmutzt und ölig, Kabel und Bowdenzüge verlegt bzw. geklebt, Typenschild verwittert",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "Kein E-Bike, sondern ein Fahrrad mit 1969er Zweitakt-Hilfsmotor (Garelli Mosquito-Prinzip, Rahmenplakette Chiorda-Sud); Neupreis und Kilometerstand nicht ermittelbar."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
