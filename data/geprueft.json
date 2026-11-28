@@ -7032,5 +7032,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1489801439": {
+  "id": "1489801439",
+  "erfasst": "2026-11-28 11:59",
+  "geprueft": "2026-11-28 11:59",
+  "title": "Dreifahrrad",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/dreifahrrad-1489801439/",
+  "price": 280.0,
+  "entfernung_km": 144.5,
+  "ort": "Guntramsdorf",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "unbekannt",
+   "modell": "Erwachsenen-Dreirad, Modell unbekannt (blau, mit Gepäckkorb)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Gebrauchsspuren; Sattel laut Verkäufer zu ersetzen",
+   "sicherheit": "mittel",
+   "quelle": "Foto",
+   "notiz": "Mechanisches Dreirad ohne erkennbaren Motor oder Akku, daher kein E-Bike; Marke und Modell sind auf den Fotos nicht ersichtlich."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
