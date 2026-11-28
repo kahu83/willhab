@@ -6503,5 +6503,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1807982569": {
+  "id": "1807982569",
+  "erfasst": "2026-11-28 09:31",
+  "geprueft": "2026-11-28 09:31",
+  "title": "E-Bike - Cannondale Tourer - schwarz",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-cannondale-tourer-schwarz-1807982569/",
+  "price": 650.0,
+  "entfernung_km": 105.2,
+  "ort": "Hallein",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Cannondale",
+   "modell": "Tourer (Variante nicht erkennbar)",
+   "modelljahr": null,
+   "motor_hersteller": "Shimano",
+   "bosch_linie": null,
+   "akku_wh": 504,
+   "uvp_eur": null,
+   "laufleistung_km": 8481,
+   "schaeden": "Keine eindeutigen Schäden auf den Fotos erkennbar",
+   "sicherheit": "niedrig",
+   "quelle": "Verkäufertext",
+   "notiz": "Modell und Motor laut Verkäufer, aber nicht auf den Fotos belegt; Akkuangabe '2 x 504W' ist unklar."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
