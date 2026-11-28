@@ -7715,5 +7715,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1108546576": {
+  "id": "1108546576",
+  "erfasst": "2026-11-28 18:49",
+  "geprueft": "2026-11-28 18:49",
+  "title": "LANKELEISI X-Black Knight",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/lankeleisi-x-black-knight-1108546576/",
+  "price": 600.0,
+  "entfernung_km": 152.7,
+  "ort": "Wien",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Motor laut Foto/Spezifikation: andere",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Lankeleisi",
+   "modell": "X-Black Knight (Doppelakku, 2x1000W Doppelmotor)",
+   "modelljahr": null,
+   "motor_hersteller": "andere",
+   "bosch_linie": null,
+   "akku_wh": 2160,
+   "uvp_eur": 2999,
+   "laufleistung_km": null,
+   "schaeden": "Schaltung defekt laut Verkäufer: Kette und hinteres Schaltwerk müssen ersetzt werden (Verkäufer: unter 100 € für beides); auf den Fotos keine sichtbaren Schäden, die Fotos zeigen aber Herstellerbilder und nicht das angebotene Rad",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "Herstellerbilder statt Fotos des Rads, Motor ist ein Lankeleisi-Doppelnabenmotor (2x1000W, laut Verkäufer 2000W), Akku 48V 45Ah Samsung (2160 Wh), Preis 600 € bei UVP 2999 €, Schaltungsdefekt laut Verkäufer, 48 km/h-Freischaltung ist rechtlich relevant."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
