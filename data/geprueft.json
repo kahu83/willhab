@@ -7614,5 +7614,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "848416052": {
+  "id": "848416052",
+  "erfasst": "2026-11-28 17:03",
+  "geprueft": "2026-11-28 17:03",
+  "title": "E-Bike Damen Herkules",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-damen-herkules-848416052/",
+  "price": 1200.0,
+  "entfernung_km": 169.4,
+  "ort": "Gaweinstal",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Modelljahr unbekannt",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "Bosch",
+  "vision": {
+   "marke": "Hercules",
+   "modell": "Robert/a I-R8 (vermutlich, Wave-Tiefeinsteiger, 8-Gang RT)",
+   "modelljahr": null,
+   "motor_hersteller": "Bosch",
+   "bosch_linie": "Active Line Plus",
+   "akku_wh": 500,
+   "uvp_eur": null,
+   "laufleistung_km": 1326,
+   "schaeden": "Sattelbezug abgenutzt und verschmutzt; sonst keine klar erkennbaren Schäden auf den Fotos",
+   "sicherheit": "mittel",
+   "quelle": "Foto",
+   "notiz": "Modell nicht eindeutig identifizierbar; Bosch-Antrieb und Display plausibel, Akku-Kapazität nur laut Verkäufer bestätigt."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
