@@ -6541,5 +6541,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1939287566": {
+  "id": "1939287566",
+  "erfasst": "2026-11-28 09:59",
+  "geprueft": "2026-11-28 09:59",
+  "title": "Faltbares e bike Sharp",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/faltbares-e-bike-sharp-1939287566/",
+  "price": 1100.0,
+  "entfernung_km": 152.8,
+  "ort": "Wien",
+  "zustand": "Neuwertig",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Sharp",
+   "modell": "BK-FD03-EB (faltbares E-Bike, schwarz, 20\"), Zuordnung unsicher",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": 270,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "Schwarzer Sharp-Klapper mit 250-W-Heckmotor und 270-Wh-Akku laut Spezifikation, Modell aus Fotos nur vermutet; Motorhersteller und Kilometerstand nicht belegt."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
