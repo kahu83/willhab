@@ -6012,5 +6012,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1387051211": {
+  "id": "1387051211",
+  "erfasst": "2026-11-28 05:17",
+  "geprueft": "2026-11-28 05:17",
+  "title": "E bike",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-1387051211/",
+  "price": 1100.0,
+  "entfernung_km": 139.6,
+  "ort": "Bad Hofgastein",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Motor laut Foto/Spezifikation: andere",
+  "defekt": false,
+  "jahr": 2020,
+  "jahr_quelle": "Foto/Spezifikation",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Giant",
+   "modell": "Full-E+ (Variante vermutlich 0 SX, nicht eindeutig bestimmbar)",
+   "modelljahr": 2020,
+   "motor_hersteller": "andere",
+   "bosch_linie": null,
+   "akku_wh": 500,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Keine groben Schäden erkennbar; leichte Gebrauchsspuren",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "Giant Full-E+ mit Yamaha-basiertem SyncDrive-Motor und 500-Wh-Unterrohrakku; Modelljahr und Variante nur Vermutung, Kilometerstand fehlt, Verkäuferangabe '500 Watt' ist vermutlich der Akku (Wh)."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
