@@ -6164,5 +6164,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "875652742": {
+  "id": "875652742",
+  "erfasst": "2026-11-28 07:59",
+  "geprueft": "2026-11-28 07:59",
+  "title": "KTM e FUN Bionx",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/ktm-e-fun-bionx-875652742/",
+  "price": 250.0,
+  "entfernung_km": 59.3,
+  "ort": "Arbesbach",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Motor laut Foto/Spezifikation: andere",
+  "defekt": true,
+  "jahr": 2013,
+  "jahr_quelle": "Foto/Spezifikation",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "KTM",
+   "modell": "e FUN (BionX Nabenmotor, Damen-Trekking, 28 Zoll)",
+   "modelljahr": 2013,
+   "motor_hersteller": "andere",
+   "bosch_linie": null,
+   "akku_wh": 317,
+   "uvp_eur": 1999,
+   "laufleistung_km": null,
+   "schaeden": "Gebrauchsspuren am Rahmen/Lack; Ständer demontiert; Akku tiefentladen/defekt laut Verkäufer",
+   "sicherheit": "mittel",
+   "quelle": "Spezifikation",
+   "notiz": "KTM e FUN mit BionX-Hinterradnabenmotor (250W) und 317-Wh-48V-Akku; Akku laut Verkäufer tiefentladen und nicht ladbar, Modelljahr 2013 laut Datenbank, Laufleistung nicht angegeben."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
