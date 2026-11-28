@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-28 12:16
+Stand: 2026-11-28 12:33
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -35,7 +35,7 @@ Stand: 2026-11-28 12:16
 | [1067758416](fahrraeder/1067758416.md) | Husquarna Rasentrimmer Heckenschere Akku 115iL + 1 | 150 € | ? | verfuegbar | 09.11.2026 | 24.12.2026 | Gartengeräte › Heckenscheren |
 | [1038578560](fahrraeder/1038578560.md) | Gartenhäcksler | 30 € | ? | verfuegbar | 10.11.2026 | 25.12.2026 | Gartengeräte › Häcksler |
 | [1285263358](fahrraeder/1285263358.md) |  | ? | ? | geloescht | – | – |  |
-| [1220867798](fahrraeder/1220867798.md) | Warmwasser Wärmepumpe Dimplex BWP300LW | 49 € | ? | verfuegbar | 09.11.2026 | 24.12.2026 | Heizung / Öfen / Klima › Boiler |
+| [1220867798](fahrraeder/1220867798.md) | (reserviert) Warmwasser Wärmepumpe Dimplex BWP300L | 49 € | ? | reserviert | 09.11.2026 | 24.12.2026 | Heizung / Öfen / Klima › Boiler |
 | [1141209021](fahrraeder/1141209021.md) | Edelstahlwindkessel 160l | 300 € | ? | verfuegbar | 24.10.2026 | 08.12.2026 | Heizung / Öfen / Klima › Boiler |
 | [903720229](fahrraeder/903720229.md) | Warmwasserwärmepumpe | 200 € | ? | verfuegbar | 31.10.2026 | 15.12.2026 | Heizung / Öfen / Klima › Heizgeräte / -kessel |
 | [2005448648](fahrraeder/2005448648.md) | Verkaufe beide meiner TRP Scheibenbremsen | 100 € | ? | verfuegbar | 17.10.2026 | 01.12.2026 | Fahrrad Ersatzteile / Zubehör › Bremsen |
