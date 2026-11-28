@@ -1,6 +1,6 @@
 # Watchlist – aktueller Stand
 
-Stand: 2026-11-27 18:13
+Stand: 2026-11-28 01:26
 
 | ID | Titel | Preis | Laufleistung | Status | Online seit | Läuft ab | Kategorie |
 |---|---|---|---|---|---|---|---|
@@ -67,7 +67,7 @@ Stand: 2026-11-27 18:13
 | [1971233514](fahrraeder/1971233514.md) | Fahrrad Lenkergriff | 10 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Fahrrad Ersatzteile / Zubehör › Rahmen / Gabeln / Lenker |
 | [1232918401](fahrraeder/1232918401.md) | Diamant E-Bike mit Bosch-Akku - für Bastler / Repa | 269 € | ? | verfuegbar | 01.11.2026 | 16.12.2026 | Fahrräder › E-Bikes |
 | [1135300963](fahrraeder/1135300963.md) | Specialized Turbo Kenevo | 1.800 € | ? | verfuegbar | 28.10.2026 | 12.12.2026 | Fahrräder › E-Bikes |
-| [1777775774](fahrraeder/1777775774.md) | E Bike Schutz | 30 € | ? | verfuegbar | 29.10.2026 | 13.12.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
+| [1777775774](fahrraeder/1777775774.md) | E Bike Schutz | 25 € | ? | verfuegbar | 29.10.2026 | 13.12.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
 | [1185205700](fahrraeder/1185205700.md) | Kinder E-Bike Apache | 950 € | 1817 km | verfuegbar | 30.10.2026 | 14.12.2026 | Fahrräder › E-Bikes |
 | [1347028291](fahrraeder/1347028291.md) | 12 Fach Kassette NEU für XD Freilauf | 55 € | ? | verfuegbar | 30.10.2026 | 14.12.2026 | Fahrrad Ersatzteile / Zubehör › Kettenblätter / Ketten / Schaltungen |
 | [1143798288](fahrraeder/1143798288.md) | (verkauft) Akku 750 Power Tube von Bosch | 240 € | ? | verkauft | 13.10.2026 | 27.11.2026 | Fahrrad Ersatzteile / Zubehör › E-Bike Batterien / Zubehör |
