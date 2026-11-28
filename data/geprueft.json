@@ -7551,5 +7551,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1788465240": {
+  "id": "1788465240",
+  "erfasst": "2026-11-28 15:59",
+  "geprueft": "2026-11-28 15:59",
+  "title": "E-Scooter",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-scooter-1788465240/",
+  "price": 180.0,
+  "entfernung_km": 78.9,
+  "ort": "Gröbming",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "unbekannt",
+   "modell": "unbekannt (E-Scooter, Modell nicht erkennbar)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": null,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "keine groben Schäden erkennbar; Verschmutzung",
+   "sicherheit": "niedrig",
+   "quelle": "Foto",
+   "notiz": "E-Scooter ohne lesbaren Markenschriftzug; Modell, Motor und Akku sind nicht identifizierbar, Kauf bei Maximarkt und Rechnung nur Verkäuferangabe."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
