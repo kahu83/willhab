@@ -7488,5 +7488,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1316365618": {
+  "id": "1316365618",
+  "erfasst": "2026-11-28 15:14",
+  "geprueft": "2026-11-28 15:14",
+  "title": "Nova m4 moped",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/nova-m4-moped-1316365618/",
+  "price": 300.0,
+  "entfernung_km": 153.8,
+  "ort": "Wien",
+  "zustand": "Neuwertig",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "kein Bosch-/Brose-Motor erkennbar",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Elektropower",
+   "modell": "Nova M4 (25 km/h, 25 Ah Akku)",
+   "modelljahr": null,
+   "motor_hersteller": "unbekannt",
+   "bosch_linie": null,
+   "akku_wh": 1500,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "",
+   "sicherheit": "niedrig",
+   "quelle": "Spezifikation",
+   "notiz": "Elektropower Nova M4 mit 1000 W Motor, 60 V und 25 Ah Akku, Preis von 300 € wirkt im Vergleich zum Neupreis sehr niedrig, daher Vorsicht."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
