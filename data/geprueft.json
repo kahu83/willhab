@@ -6655,5 +6655,43 @@
   "zustand_notizen": [],
   "rabatt_pct": null,
   "thumb": true
+ },
+ "1017936035": {
+  "id": "1017936035",
+  "erfasst": "2026-11-28 10:36",
+  "geprueft": "2026-11-28 10:36",
+  "title": "E- bike Fahrrad",
+  "url": "https://www.willhaben.at/iad/kaufen-und-verkaufen/d/e-bike-fahrrad-1017936035/",
+  "price": 800.0,
+  "entfernung_km": 73.9,
+  "ort": "Münzkirchen",
+  "zustand": "Gebraucht",
+  "online_seit": "2026-11-28",
+  "kategorie": "Fahrräder › E-Bikes",
+  "verdict": "aussortiert",
+  "grund": "Modelljahr unbekannt",
+  "defekt": false,
+  "jahr": null,
+  "jahr_quelle": "",
+  "laufleistung_km": null,
+  "motor_text": "",
+  "vision": {
+   "marke": "Trek",
+   "modell": "unbekannt (Trek-Trekking-E-Bike, Modell auf Fotos nicht eindeutig)",
+   "modelljahr": null,
+   "motor_hersteller": "Bosch",
+   "bosch_linie": "Active Line",
+   "akku_wh": 500,
+   "uvp_eur": null,
+   "laufleistung_km": null,
+   "schaeden": "Kratzer und Gebrauchsspuren am Akkudeckel und am Rahmen unter dem Akku",
+   "sicherheit": "mittel",
+   "quelle": "Foto",
+   "notiz": "Trek-Rahmen mit Bosch Active Line und PowerPack 500 (Rahmenakku); Modell und Baujahr nicht sicher bestimmbar, Reichweite 130 km ist nur Verkäuferangabe."
+  },
+  "calc": null,
+  "zustand_notizen": [],
+  "rabatt_pct": null,
+  "thumb": true
  }
 }
